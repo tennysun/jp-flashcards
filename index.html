@@ -203,18 +203,14 @@ function startQuiz(mode) {
   nextCard();
 }
 function nextCard() {
-  if (currentWordList.length === 0) {
+  if (!currentWordList || currentWordList.length === 0) {
+    console.log("⚠ No words left, returning to menu");
     returnToMenu();
     return;
   }
   currentWord = currentWordList[Math.floor(Math.random() * currentWordList.length)];
+  console.log("📘 Showing word:", currentWord.japanese);
   renderCard(currentWord);
-  document.addEventListener('click', function waitForClick(e) {
-    if (e.target.closest('.option') || e.target.closest('#card')) return;
-    document.removeEventListener('click', waitForClick);
-    currentWordList = currentWordList.filter(w => w.japanese !== currentWord.japanese);
-    nextCard();
-  });
 
   hasAnswered = false;
   document.getElementById("feedback").textContent = "";
