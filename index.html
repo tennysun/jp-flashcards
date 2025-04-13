@@ -164,7 +164,36 @@
 <div id="feedback"></div>
 <button id="back" onclick="returnToMenu()">← Back</button>
 </div>
-<script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+
+function renderCard(word) {
+  const card = document.getElementById("card");
+  const grid = document.getElementById("option-grid");
+  if (!card || !grid) {
+    console.warn("🚫 renderCard failed: Missing elements");
+    return;
+  }
+
+  card.innerHTML = `
+    <div id="kanji">${word.japanese}</div>
+    <div id="furigana">${word.hiragana || "?"}</div>
+  `;
+
+  const options = shuffle([...wordList].filter(w => w.english !== word.english))
+    .slice(0, 8)
+    .concat(word);
+  const shuffled = shuffle(options);
+
+  grid.innerHTML = "";
+  shuffled.forEach(option => {
+    const btn = document.createElement("div");
+    btn.className = "option";
+    btn.textContent = option.english;
+    btn.onclick = () => handleAnswer(option.english === word.english, btn, word);
+    grid.appendChild(btn);
+  });
+}
+
 let vocabList = [];
 let wordStatus = {};
 let currentWordList = [];
@@ -203,15 +232,6 @@ function startQuiz(mode) {
   nextCard();
 }
 function nextCard() {
-  if (!currentWordList || currentWordList.length === 0) {
-    console.log("⚠ No words left, returning to menu");
-    returnToMenu();
-    return;
-  }
-  currentWord = currentWordList[Math.floor(Math.random() * currentWordList.length)];
-  console.log("📘 Showing word:", currentWord.japanese);
-  renderCard(currentWord);
-
   hasAnswered = false;
   document.getElementById("feedback").textContent = "";
   const optionsContainer = document.getElementById("options");
@@ -297,30 +317,6 @@ fetch("vocab.json")
     console.error(err);
   });
 
-
-function renderCard(word) {
-  const card = document.getElementById("card");
-  card.innerHTML = `
-    <div id="kanji">${word.japanese}</div>
-    <div id="furigana">${word.hiragana}</div>
-  `;
-
-  const options = [...currentWordList]
-    .sort(() => 0.5 - Math.random())
-    .slice(0, 8)
-    .concat(word)
-    .sort(() => 0.5 - Math.random());
-
-  const grid = document.getElementById("option-grid");
-  grid.innerHTML = "";
-  options.forEach(option => {
-    const btn = document.createElement("div");
-    btn.className = "option";
-    btn.textContent = option.english;
-    btn.onclick = () => handleAnswer(option.english === word.english, btn, word);
-    grid.appendChild(btn);
-  });
-}
-</script>
+});</script>
 </body>
 </html>
