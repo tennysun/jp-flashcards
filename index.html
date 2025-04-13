@@ -296,6 +296,31 @@ fetch("vocab.json")
     alert("Failed to load vocab.json");
     console.error(err);
   });
+
+
+function renderCard(word) {
+  const card = document.getElementById("card");
+  card.innerHTML = `
+    <div id="kanji">${word.japanese}</div>
+    <div id="furigana">${word.hiragana}</div>
+  `;
+
+  const options = [...currentWordList]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 8)
+    .concat(word)
+    .sort(() => 0.5 - Math.random());
+
+  const grid = document.getElementById("option-grid");
+  grid.innerHTML = "";
+  options.forEach(option => {
+    const btn = document.createElement("div");
+    btn.className = "option";
+    btn.textContent = option.english;
+    btn.onclick = () => handleAnswer(option.english === word.english, btn, word);
+    grid.appendChild(btn);
+  });
+}
 </script>
 </body>
 </html>
