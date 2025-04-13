@@ -205,7 +205,6 @@ function startQuiz(mode) {
 function nextCard() {
   currentWordList = currentWordList.filter(w => w.japanese !== currentWord.japanese);
   if (currentWordList.length === 0) returnToMenu();
-
   hasAnswered = false;
   document.getElementById("feedback").textContent = "";
   const optionsContainer = document.getElementById("options");
