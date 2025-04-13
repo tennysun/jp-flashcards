@@ -164,9 +164,7 @@
 <div id="feedback"></div>
 <button id="back" onclick="returnToMenu()">← Back</button>
 </div>
-<script>document.addEventListener('DOMContentLoaded', () => {
-
-function renderCard(word) {
+<script>function renderCard(word) {
   const card = document.getElementById("card");
   const grid = document.getElementById("option-grid");
   if (!card || !grid) {
@@ -317,6 +315,6 @@ fetch("vocab.json")
     console.error(err);
   });
 
-});</script>
+}</script>
 </body>
 </html>
