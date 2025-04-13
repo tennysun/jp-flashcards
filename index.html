@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Flashcard Quiz</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Flashcard Quiz</title>
+<style>
     :root {
       --bg-light: #f5f5f5;
       --bg-dark: #121212;
@@ -145,27 +146,24 @@
 </head>
 <body>
 <button id="toggle-theme">🌓</button>
-
 <div id="menu">
-  <h1>Select Word Set</h1>
-  <button class="btn" onclick="startQuiz('NEW')">NEW (<span id="count-new"></span>)</button>
-  <button class="btn" onclick="startQuiz('FAIL')">FAIL (<span id="count-fail"></span>)</button>
-  <button class="btn" onclick="startQuiz('OK')">OK (<span id="count-ok"></span>)</button>
-  <button class="btn" onclick="startQuiz('GOOD')">GOOD (<span id="count-good"></span>)</button>
+<h1>Select Word Set</h1>
+<button class="btn" onclick="startQuiz('NEW')">NEW (<span id="count-new"></span>)</button>
+<button class="btn" onclick="startQuiz('FAIL')">FAIL (<span id="count-fail"></span>)</button>
+<button class="btn" onclick="startQuiz('OK')">OK (<span id="count-ok"></span>)</button>
+<button class="btn" onclick="startQuiz('GOOD')">GOOD (<span id="count-good"></span>)</button>
 </div>
-
 <div id="quiz">
-  <div id="card" onclick="playCurrentAudio()">
-    <div class="kanji" id="quizKanji"></div>
-    <div class="furigana" id="quizFurigana"></div>
-  </div>
-  <div id="options-wrapper">
-    <div id="options"></div>
-  </div>
-  <div id="feedback"></div>
-  <button id="back" onclick="returnToMenu()">← Back</button>
+<div id="card" onclick="playCurrentAudio()">
+<div class="kanji" id="quizKanji"></div>
+<div class="furigana" id="quizFurigana"></div>
 </div>
-
+<div id="options-wrapper">
+<div id="options"></div>
+</div>
+<div id="feedback"></div>
+<button id="back" onclick="returnToMenu()">← Back</button>
+</div>
 <script>
 let vocabList = [];
 let wordStatus = {};
@@ -205,6 +203,9 @@ function startQuiz(mode) {
   nextCard();
 }
 function nextCard() {
+  currentWordList = currentWordList.filter(w => w.japanese !== currentWord.japanese);
+  if (currentWordList.length === 0) returnToMenu();
+
   hasAnswered = false;
   document.getElementById("feedback").textContent = "";
   const optionsContainer = document.getElementById("options");
@@ -239,17 +240,7 @@ function nextCard() {
         });
       }
       saveStatus();
-      
       setTimeout(() => {
-        document.addEventListener("click", function waitForClick(e) {
-          if (!e.target.closest(".option") && !e.target.closest("#card")) {
-            document.removeEventListener("click", waitForClick);
-            currentWordList = currentWordList.filter(w => w.japanese !== currentWord.japanese);
-            if (currentWordList.length === 0) returnToMenu();
-            else nextCard();
-          }
-        });
-    
         document.body.addEventListener("click", waitClickOnce, { once: true });
       }, 100);
     };
