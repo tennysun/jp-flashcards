@@ -254,7 +254,7 @@ function returnToMenu() {
 }
 function playCurrentAudio() {
   if (!currentWord) return;
-  fetch("https://flashcard-api.onrender.com/speak", {
+  fetch("https://flashcard-api-cw40.onrender.com/speak", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text: currentWord.japanese })
