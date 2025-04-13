@@ -1,319 +1,215 @@
-
 <!DOCTYPE html>
-
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Flashcard Quiz</title>
-<style>
-    :root {
-      --bg-light: #f5f5f5;
-      --bg-dark: #121212;
-      --fg-light: #000;
-      --fg-dark: #eee;
-      --card-light: #fff;
-      --card-dark: #1e1e1e;
-      --green: #69db7c;
-      --red: #ff6b6b;
-      --gray-border: rgba(150,150,150,0.25);
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japanese Flashcards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
     body {
-      margin: 0;
       font-family: sans-serif;
-      background: var(--bg-light);
-      color: var(--fg-light);
+      margin: 0;
+      padding: 0;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+    }
+    :root {
+      --bg: #f4f4f4;
+      --text: #111;
+      --card: white;
+      --border: #ddd;
+      --correct: #d4edda;
+      --wrong: #f8d7da;
+    }
+    [data-theme="dark"] {
+      --bg: #111;
+      --text: #f4f4f4;
+      --card: #1e1e1e;
+      --border: #444;
+      --correct: #2e5939;
+      --wrong: #5b2c2c;
+    }
+    .fade {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .visible {
+      opacity: 1;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
       text-align: center;
-      transition: background 0.3s, color 0.3s;
     }
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--fg-dark);
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+      position: relative;
     }
-    #toggle-theme {
+    .card .icon {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    .card .icon:hover {
+      opacity: 1;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: auto;
+      max-width: 320px;
+    }
+    .grid button {
+      padding: 1rem;
+      border: none;
+      background: var(--card);
+      color: var(--text);
+      white-space: nowrap;
+      overflow-wrap: break-word;
+      transition: background 0.2s;
+    }
+    .grid button.correct {
+      background: var(--correct);
+    }
+    .grid button.wrong {
+      background: var(--wrong);
+    }
+    .mode-toggle {
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 1.2em;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: inherit;
-    }
-    #menu, #quiz {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .btn {
-      background: var(--card-light);
-      color: inherit;
-      border-radius: 8px;
-      border: 1px solid var(--gray-border);
-      padding: 12px 24px;
-      cursor: pointer;
-      font-size: 1rem;
-      width: 200px;
-      transition: background 0.2s ease;
-    }
-    .btn:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-    body.dark .btn {
-      background: var(--card-dark);
-    }
-    #card {
-      background: var(--card-light);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      width: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: background 0.3s;
       cursor: pointer;
     }
-    body.dark #card {
-      background: var(--card-dark);
-    }
-    .kanji {
-      font-size: 2em;
-      font-weight: bold;
-    }
-    .furigana {
-      font-size: 0.8em;
-      margin-top: 4px;
-    }
-    #options-wrapper {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 24px;
-    }
-    #options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      width: 300px;
-    }
-    .option {
-      aspect-ratio: 1 / 1;
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.85em;
-      line-height: 1.2em;
-      white-space: normal;
-      word-break: break-word;
-      background: var(--card-light);
-      border: 1px solid var(--gray-border);
-      box-sizing: border-box;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    body.dark .option {
-      background: var(--card-dark);
-    }
-    .option:hover {
-      background-color: rgba(0,0,0,0.05);
-    }
-    .option.correct {
-      background-color: var(--green);
-      color: #000;
-    }
-    .option.wrong {
-      background-color: var(--red);
-      color: #000;
-    }
-    #feedback {
-      font-weight: bold;
-    }
-    #back {
-      margin-top: 12px;
-      background: #999;
+    .back {
+      margin-top: 1rem;
+      background: gray;
       color: white;
-      padding: 8px 14px;
       border: none;
-      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-<button id="toggle-theme">🌓</button>
-<div id="menu">
-<h1>Select Word Set</h1>
-<button class="btn" onclick="startQuiz('NEW')">NEW (<span id="count-new"></span>)</button>
-<button class="btn" onclick="startQuiz('FAIL')">FAIL (<span id="count-fail"></span>)</button>
-<button class="btn" onclick="startQuiz('OK')">OK (<span id="count-ok"></span>)</button>
-<button class="btn" onclick="startQuiz('GOOD')">GOOD (<span id="count-good"></span>)</button>
-</div>
-<div id="quiz">
-<div id="card" onclick="playCurrentAudio()">
-<div class="kanji" id="quizKanji"></div>
-<div class="furigana" id="quizFurigana"></div>
-</div>
-<div id="options-wrapper">
-<div id="options"></div>
-</div>
-<div id="feedback"></div>
-<button id="back" onclick="returnToMenu()">← Back</button>
-</div>
-<script>function renderCard(word) {
-  const card = document.getElementById("card");
-  const grid = document.getElementById("option-grid");
-  if (!card || !grid) {
-    console.warn("🚫 renderCard failed: Missing elements");
-    return;
-  }
+  <div class="mode-toggle" onclick="toggleTheme()">
+    <i class="fas fa-adjust"></i>
+  </div>
+  <div class="container fade visible" id="menu">
+    <h2>Select Category</h2>
+    <button onclick="startQuiz('NEW')">NEW (<span id="count-NEW">0</span>)</button>
+    <button onclick="startQuiz('FAIL')">FAIL (<span id="count-FAIL">0</span>)</button>
+    <button onclick="startQuiz('OK')">OK (<span id="count-OK">0</span>)</button>
+    <button onclick="startQuiz('GOOD')">GOOD (<span id="count-GOOD">0</span>)</button>
+  </div>
+  <div class="container fade" id="quiz">
+    <div class="card">
+      <div id="kanji">単語</div>
+      <div id="reading">よみ</div>
+      <i class="fas fa-volume-up icon" onclick="playAudio()"></i>
+    </div>
+    <div class="grid" id="options"></div>
+    <button class="back" onclick="showMenu()">&larr; Back</button>
+  </div>
+  <script>
+    const menu = document.getElementById('menu');
+    const quiz = document.getElementById('quiz');
+    let allWords = [], session = {}, currentWord, mode = 'NEW';
 
-  card.innerHTML = `
-    <div id="kanji">${word.japanese}</div>
-    <div id="furigana">${word.hiragana || "?"}</div>
-  `;
+    async function fetchWords() {
+      const res = await fetch('vocab.json');
+      allWords = await res.json();
+      ['NEW','FAIL','OK','GOOD'].forEach(k => session[k] = []);
+      allWords.forEach(w => session.NEW.push({...w}));
+      updateCounts();
+    }
 
-  const options = shuffle([...wordList].filter(w => w.english !== word.english))
-    .slice(0, 8)
-    .concat(word);
-  const shuffled = shuffle(options);
+    function updateCounts() {
+      ['NEW','FAIL','OK','GOOD'].forEach(k =>
+        document.getElementById(`count-${k}`).textContent = session[k].length
+      );
+    }
 
-  grid.innerHTML = "";
-  shuffled.forEach(option => {
-    const btn = document.createElement("div");
-    btn.className = "option";
-    btn.textContent = option.english;
-    btn.onclick = () => handleAnswer(option.english === word.english, btn, word);
-    grid.appendChild(btn);
-  });
-}
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    }
 
-let vocabList = [];
-let wordStatus = {};
-let currentWordList = [];
-let currentWord = null;
-let hasAnswered = false;
+    function fadeTo(show, hide) {
+      hide.classList.remove('visible');
+      show.classList.add('visible');
+    }
 
-function saveStatus() {
-  localStorage.setItem("wordStatus", JSON.stringify(wordStatus));
-}
-function loadStatus() {
-  wordStatus = JSON.parse(localStorage.getItem("wordStatus") || "{}");
-}
-function updateCounts() {
-  const counts = { NEW: 0, FAIL: 0, OK: 0, GOOD: 0 };
-  for (const status of Object.values(wordStatus)) {
-    counts[status]++;
-  }
-  document.getElementById("count-new").textContent = counts.NEW;
-  document.getElementById("count-fail").textContent = counts.FAIL;
-  document.getElementById("count-ok").textContent = counts.OK;
-  document.getElementById("count-good").textContent = counts.GOOD;
-}
-function showMenu() {
-  updateCounts();
-  document.getElementById("menu").style.display = "flex";
-  document.getElementById("quiz").style.display = "none";
-}
-function startQuiz(mode) {
-  currentWordList = vocabList.filter(v => wordStatus[v.japanese] === mode);
-  if (currentWordList.length === 0) {
-    alert("No words in this category.");
-    return;
-  }
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("quiz").style.display = "flex";
-  nextCard();
-}
-function nextCard() {
-  hasAnswered = false;
-  document.getElementById("feedback").textContent = "";
-  const optionsContainer = document.getElementById("options");
-  optionsContainer.innerHTML = "";
-  const index = Math.floor(Math.random() * currentWordList.length);
-  currentWord = currentWordList[index];
-  document.getElementById("quizKanji").textContent = currentWord.japanese;
-  document.getElementById("quizFurigana").textContent = currentWord.furigana;
+    function showMenu() {
+      fadeTo(menu, quiz);
+    }
 
-  const wrongChoices = vocabList.filter(v => v.meaning !== currentWord.meaning);
-  const allChoices = [...wrongChoices.sort(() => 0.5 - Math.random()).slice(0, 8), currentWord]
-                      .sort(() => 0.5 - Math.random());
+    function startQuiz(cat) {
+      mode = cat;
+      fadeTo(quiz, menu);
+      nextCard();
+    }
 
-  allChoices.forEach(choice => {
-    const div = document.createElement("div");
-    div.className = "option";
-    div.textContent = choice.meaning;
-    div.onclick = () => {
-      if (hasAnswered) return;
-      hasAnswered = true;
-      if (choice.meaning === currentWord.meaning) {
-        div.classList.add("correct");
-        wordStatus[currentWord.japanese] =
-          wordStatus[currentWord.japanese] === "FAIL" ? "OK" : "GOOD";
-      } else {
-        div.classList.add("wrong");
-        wordStatus[currentWord.japanese] = "FAIL";
-        [...optionsContainer.children].forEach(opt => {
-          if (opt.textContent === currentWord.meaning) {
-            opt.classList.add("correct");
+    function nextCard() {
+      if (session[mode].length === 0) return showMenu();
+      const i = Math.floor(Math.random() * session[mode].length);
+      currentWord = session[mode].splice(i,1)[0];
+      renderCard();
+      updateCounts();
+    }
+
+    function renderCard() {
+      document.getElementById('kanji').textContent = currentWord.japanese;
+      document.getElementById('reading').textContent = currentWord.reading || '';
+      const grid = document.getElementById('options');
+      grid.innerHTML = '';
+      let options = allWords.map(w => w.english).sort(() => 0.5 - Math.random()).slice(0,8);
+      if (!options.includes(currentWord.english)) options[0] = currentWord.english;
+      options = options.sort(() => 0.5 - Math.random());
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.innerHTML = opt.replace(/ ,/g, ',');
+        btn.onclick = () => {
+          btn.classList.add(opt === currentWord.english ? 'correct' : 'wrong');
+          if (opt === currentWord.english) {
+            session.GOOD.push(currentWord);
+          } else {
+            document.querySelectorAll('.grid button').forEach(b => {
+              if (b.innerHTML === currentWord.english) b.classList.add('correct');
+            });
+            session.FAIL.push(currentWord);
           }
-        });
-      }
-      saveStatus();
-      setTimeout(() => {
-        document.body.addEventListener("click", waitClickOnce, { once: true });
-      }, 100);
-    };
-    optionsContainer.appendChild(div);
-  });
-}
-function waitClickOnce() {
-  nextCard();
-}
-function returnToMenu() {
-  showMenu();
-}
-function playCurrentAudio() {
-  if (!currentWord) return;
-  fetch("https://flashcard-api-cw40.onrender.com/speak", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: currentWord.japanese })
-  })
-  .then(r => r.blob())
-  .then(blob => {
-    const url = URL.createObjectURL(blob);
-    new Audio(url).play();
-  });
-}
-document.getElementById("toggle-theme").onclick = () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-};
+          updateCounts();
+          setTimeout(nextCard, 1000);
+        }
+        grid.appendChild(btn);
+      });
+    }
 
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-}
+    async function playAudio() {
+      await fetch("https://flashcard-api-cw40.onrender.com/speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: currentWord.japanese })
+      });
+    }
 
-loadStatus();
-
-fetch("vocab.json")
-  .then(res => res.json())
-  .then(data => {
-    vocabList = data;
-    vocabList.forEach(v => {
-      if (!wordStatus[v.japanese]) wordStatus[v.japanese] = "NEW";
-    });
-    showMenu();
-  })
-  .catch(err => {
-    alert("Failed to load vocab.json");
-    console.error(err);
-  });
-
-</script>
+    fetchWords();
+  </script>
+</body>
 </html>
