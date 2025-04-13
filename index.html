@@ -254,7 +254,7 @@ function returnToMenu() {
 }
 function playCurrentAudio() {
   if (!currentWord) return;
-  fetch("http://localhost:5000/speak", {
+  fetch("https://flashcard-api.onrender.com/speak", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text: currentWord.japanese })
