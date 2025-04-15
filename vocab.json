@@ -112,5 +112,143 @@
     "romaji": "shouko",
     "furigana": "しょうこ",
     "meaning": "evidence, proof"
+  },
+  {
+    "japanese": "チョロい",
+    "romaji": "choroi",
+    "furigana": "ちょろい",
+    "meaning": "naive, easy to fool"
+  },
+  {
+    "japanese": "ちくしょう",
+    "romaji": "chikushou",
+    "furigana": "ちくしょう",
+    "meaning": "damn it, shit"
+  },
+  {
+    "japanese": "でたらめ",
+    "romaji": "detarame",
+    "furigana": "でたらめ",
+    "meaning": "nonsense, absurdity, rubbish"
+  },
+  {
+    "japanese": "くだらない",
+    "romaji": "kudaranai",
+    "furigana": "くだらない",
+    "meaning": "worthless, silly, trashy"
+  },
+  {
+    "japanese": "才能",
+    "romaji": "sainou",
+    "furigana": "さいのう",
+    "meaning": "talent, aptitude, ability"
+  },
+  {
+    "japanese": "突然",
+    "romaji": "totsuzen",
+    "furigana": "とつぜん",
+    "meaning": "suddenly, abrupt"
+  },
+  {
+    "japanese": "当ててみて",
+    "romaji": "atete mite",
+    "furigana": "あててみて",
+    "meaning": "try to guess"
+  },
+  {
+    "japanese": "毎度",
+    "romaji": "maido",
+    "furigana": "まいど",
+    "meaning": "every time, always"
+  },
+  {
+    "japanese": "単純",
+    "romaji": "tanjun",
+    "furigana": "たんじゅん",
+    "meaning": "simplicity, simple"
+  },
+  {
+    "japanese": "必ず",
+    "romaji": "kanarazu",
+    "furigana": "かならず",
+    "meaning": "surely, without fail"
+  },
+  {
+    "japanese": "イチかバチか",
+    "romaji": "ichikabachika",
+    "furigana": "いちかばちか",
+    "meaning": "sink or swim, all or nothing gamble"
+  },
+  {
+    "japanese": "閉店",
+    "romaji": "heiten",
+    "furigana": "へいてん",
+    "meaning": "closing (of a store)"
+  },
+  {
+    "japanese": "ぴったり",
+    "romaji": "pittari",
+    "furigana": "ぴったり",
+    "meaning": "perfectly, precisely, exactly"
+  },
+  {
+    "japanese": "一応",
+    "romaji": "ichiou",
+    "furigana": "いちおう",
+    "meaning": "tentatively, just in case, for the time being"
+  },
+  {
+    "japanese": "目的",
+    "romaji": "mokuteki",
+    "furigana": "もくてき",
+    "meaning": "purpose, goal, objective"
+  },
+  {
+    "japanese": "妄想",
+    "romaji": "mousou",
+    "furigana": "もうそう",
+    "meaning": "delusion, wild idea, fantasy"
+  },
+  {
+    "japanese": "全額",
+    "romaji": "zengaku",
+    "furigana": "ぜんがく",
+    "meaning": "full amount, total sum"
+  },
+  {
+    "japanese": "生命",
+    "romaji": "seimei",
+    "furigana": "せいめい",
+    "meaning": "life, existence"
+  },
+  {
+    "japanese": "残り",
+    "romaji": "nokori",
+    "furigana": "のこり",
+    "meaning": "leftover, remaining"
+  },
+  {
+    "japanese": "残酷",
+    "romaji": "zankoku",
+    "furigana": "ざんこく",
+    "meaning": "cruelty, harshness, inhumanity"
+  },
+  {
+    "japanese": "至極",
+    "romaji": "shigoku",
+    "furigana": "しごく",
+    "meaning": "very, extremely, exceedingly"
+  },
+  {
+    "japanese": "和やか",
+    "romaji": "nagoyaka",
+    "furigana": "なごやか",
+    "meaning": "gentle, mild, harmonious"
+  },
+  {
+    "japanese": "空っぽ",
+    "romaji": "karappo",
+    "furigana": "からっぽ",
+    "meaning": "empty, vacant, hollow"
   }
 ]
