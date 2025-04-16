@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice Pitch Flappy Bird</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: skyblue; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<script>
+  const canvas = document.getElementById("game");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let birdY, pipes, frame, gameStarted, countdown;
+  let smoothedTargetY = null;
+
+  const birdRadius = 20;
+  const gap = birdRadius * 5; // Larger gap (~100px)
+  const pipeWidth = 10;
+
+  function resetGame() {
+    birdY = canvas.height / 2;
+    smoothedTargetY = birdY;
+    pipes = [];
+    frame = 0;
+    gameStarted = false;
+    countdown = 3;
+    startCountdown();
+  }
+
+  function drawBird() {
+    ctx.beginPath();
+    ctx.arc(100, birdY, birdRadius, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function drawPipes() {
+    ctx.fillStyle = "green";
+    pipes.forEach(p => {
+      ctx.fillRect(p.x, 0, pipeWidth, p.top);
+      ctx.fillRect(p.x, p.top + gap, pipeWidth, canvas.height - p.top - gap);
+    });
+  }
+
+  function updatePipes() {
+    if (frame % 90 === 0) {
+      const minTop = 20;
+      const maxTop = canvas.height - gap - 20;
+      const top = Math.random() * (maxTop - minTop) + minTop;
+      pipes.push({ x: canvas.width, top });
+    }
+    pipes.forEach(p => p.x -= 3);
+    pipes = pipes.filter(p => p.x + pipeWidth > 0);
+  }
+
+  function detectCollision() {
+    for (let p of pipes) {
+      if (100 + birdRadius > p.x && 100 - birdRadius < p.x + pipeWidth) {
+        if (birdY - birdRadius < p.top || birdY + birdRadius > p.top + gap) return true;
+      }
+    }
+    return false;
+  }
+
+  function drawCountdown() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.font = "100px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(countdown === 0 ? "Go!" : countdown, canvas.width / 2, canvas.height / 2);
+  }
+
+  function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBird();
+
+    if (!gameStarted) {
+      drawCountdown();
+    } else {
+      updatePipes();
+      drawPipes();
+      if (detectCollision()) {
+        resetGame();
+        requestAnimationFrame(gameLoop);
+        return;
+      }
+    }
+
+    frame++;
+    requestAnimationFrame(gameLoop);
+  }
+
+  async function initMic() {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const source = audioCtx.createMediaStreamSource(stream);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+    source.connect(analyser);
+    const buffer = new Float32Array(analyser.fftSize);
+
+    function autoCorrelate(buf, sampleRate) {
+      let SIZE = buf.length;
+      let rms = 0;
+      for (let i = 0; i < SIZE; i++) rms += buf[i] * buf[i];
+      rms = Math.sqrt(rms / SIZE);
+      if (rms < 0.01) return -1;
+
+      let r1 = 0, r2 = SIZE - 1, thres = 0.2;
+      for (let i = 0; i < SIZE / 2; i++) {
+        if (Math.abs(buf[i]) < thres) { r1 = i; break; }
+      }
+      for (let i = 1; i < SIZE / 2; i++) {
+        if (Math.abs(buf[SIZE - i]) < thres) { r2 = SIZE - i; break; }
+      }
+
+      buf = buf.slice(r1, r2);
+      SIZE = buf.length;
+
+      let c = new Array(SIZE).fill(0);
+      for (let i = 0; i < SIZE; i++) {
+        for (let j = 0; j < SIZE - i; j++) {
+          c[i] += buf[j] * buf[j + i];
+        }
+      }
+
+      let d = 0;
+      while (c[d] > c[d + 1]) d++;
+      let maxval = -1, maxpos = -1;
+      for (let i = d; i < SIZE; i++) {
+        if (c[i] > maxval) {
+          maxval = c[i];
+          maxpos = i;
+        }
+      }
+
+      let T0 = maxpos;
+      return sampleRate / T0;
+    }
+
+    function detectPitch() {
+      analyser.getFloatTimeDomainData(buffer);
+      let pitch = autoCorrelate(buffer, audioCtx.sampleRate);
+      if (pitch > 80 && pitch < 1000) {
+        let rawTargetY = canvas.height - (pitch - 80) * 1.5;
+        if (!isNaN(rawTargetY)) {
+          if (smoothedTargetY === null) smoothedTargetY = rawTargetY;
+          smoothedTargetY = smoothedTargetY * 0.7 + rawTargetY * 0.3;
+          birdY += (smoothedTargetY - birdY) * 0.35;
+        }
+      }
+      requestAnimationFrame(detectPitch);
+    }
+
+    detectPitch();
+  }
+
+  function startCountdown() {
+    const interval = setInterval(() => {
+      countdown--;
+      if (countdown < 0) {
+        clearInterval(interval);
+        gameStarted = true;
+      }
+    }, 1000);
+  }
+
+  initMic();
+  resetGame();
+  gameLoop();
+</script>
+</body>
+</html>
