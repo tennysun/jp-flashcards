@@ -250,5 +250,65 @@
     "romaji": "karappo",
     "furigana": "からっぽ",
     "meaning": "empty, vacant, hollow"
+  },
+  {
+    "japanese": "ハンパ",
+    "romaji": "hampa",
+    "furigana": "はんぱ",
+    "meaning": "half-assed, half-baked, sloppy"
+  },
+  {
+    "japanese": "目的",
+    "romaji": "mokuteki",
+    "furigana": "もくてき",
+    "meaning": "purpose, objective, goal (e.g., 目的な for 'purposeful')"
+  },
+  {
+    "japanese": "じっくり",
+    "romaji": "jikkuri",
+    "furigana": "じっくり",
+    "meaning": "carefully, deliberately, thoroughly"
+  },
+  {
+    "japanese": "さっぱり",
+    "romaji": "sappari",
+    "furigana": "さっぱり",
+    "meaning": "refreshed, neat, feeling relieved"
+  },
+  {
+    "japanese": "うすうす",
+    "romaji": "usuusu",
+    "furigana": "うすうす",
+    "meaning": "vaguely, faintly, dimly"
+  },
+  {
+    "japanese": "諦める",
+    "romaji": "akirameru",
+    "furigana": "あきらめる",
+    "meaning": "to give up, to abandon, to resign oneself"
+  },
+  {
+    "japanese": "睡魔",
+    "romaji": "suima",
+    "furigana": "すいま",
+    "meaning": "sleepiness, drowsiness, sandman"
+  },
+  {
+    "japanese": "他人",
+    "romaji": "tanin",
+    "furigana": "たにん",
+    "meaning": "other person, outsider, stranger"
+  },
+  {
+    "japanese": "おとなしい",
+    "romaji": "otonashii",
+    "furigana": "おとなしい",
+    "meaning": "quiet, obedient, meek"
+  },
+  {
+    "japanese": "ついつい",
+    "romaji": "tsuitsui",
+    "furigana": "ついつい",
+    "meaning": "unintentionally, inadvertently, reflexively"
   }
 ]
