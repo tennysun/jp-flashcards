@@ -9,6 +9,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 342px;
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
+  margin: 0 auto;
+  
 }
 
 .option {
@@ -76,10 +80,13 @@ body.dark .option {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
       transition: background 0.3s, color 0.3s;
       user-select: none;
+      overflow-x: hidden;
+      padding: 16px;
+      box-sizing: border-box;
     }
     button,
     #menu,
@@ -95,15 +102,45 @@ body.dark .option {
       color: var(--fg-dark);
     }
     #toggle-theme {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.2em;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: inherit;
-    }
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 28px;
+        background: #e5e5e7;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        outline: none;
+        padding: 0;
+        }
+
+        #toggle-theme::after {
+            content: '☀️';
+            position: absolute;
+            top: 0px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            font-size: 24px;
+            transition: transform 0.3s ease, filter 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+        body.dark #toggle-theme {
+        background: #424242;
+        }
+        body.dark #toggle-theme::after {
+            content: '🌑';
+            transform: translateX(22px);
+            }
+
+        #toggle-theme:hover::after {
+            filter: brightness(1.10);
+        }
     #menu, #quiz {
       display: none;
       flex-direction: column;
@@ -151,9 +188,12 @@ body.dark .option {
       padding: 20px;
       margin-bottom: 30px;
       width: 300px;
+      max-width: calc(100vw - 32px);
+      box-sizing: border-box;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: background 0.3s;
       cursor: pointer;
+      
     }
 
 
@@ -171,8 +211,11 @@ body.dark .option {
     #options-wrapper {
       border-radius: 12px;
       overflow: hidden;
+      width: 342px;
+      max-width: calc(100vw - 32px);
+      margin: 0 auto;
+      box-sizing: border-box;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 0px;
     }
     .option:hover {
       background-color: rgba(0,0,0,0.01);
@@ -283,7 +326,7 @@ body.dark .speaker-icon {
 </style>
 </head>
 <body>
-<button id="toggle-theme">🌓</button>
+<button id="toggle-theme"></button>
 
 <div id="menu">
   <h1>Select Word Set</h1>
