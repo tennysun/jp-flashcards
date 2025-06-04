@@ -1,0 +1,1953 @@
+[
+  {
+    "japanese": "私",
+    "romaji": "watashi",
+    "furigana": "わたし",
+    "meaning": "I, me"
+  },
+  {
+    "japanese": "あなた",
+    "romaji": "anata",
+    "furigana": "あなた",
+    "meaning": "you"
+  },
+  {
+    "japanese": "彼",
+    "romaji": "kare",
+    "furigana": "かれ",
+    "meaning": "he, him"
+  },
+  {
+    "japanese": "彼女",
+    "romaji": "kanojo",
+    "furigana": "かのじょ",
+    "meaning": "she, her"
+  },
+  {
+    "japanese": "家族",
+    "romaji": "kazoku",
+    "furigana": "かぞく",
+    "meaning": "family"
+  },
+  {
+    "japanese": "母",
+    "romaji": "haha",
+    "furigana": "はは",
+    "meaning": "mother"
+  },
+  {
+    "japanese": "父",
+    "romaji": "chichi",
+    "furigana": "ちち",
+    "meaning": "father"
+  },
+  {
+    "japanese": "兄",
+    "romaji": "ani",
+    "furigana": "あに",
+    "meaning": "older brother"
+  },
+  {
+    "japanese": "姉",
+    "romaji": "ane",
+    "furigana": "あね",
+    "meaning": "older sister"
+  },
+  {
+    "japanese": "弟",
+    "romaji": "otouto",
+    "furigana": "おとうと",
+    "meaning": "younger brother"
+  },
+  {
+    "japanese": "妹",
+    "romaji": "imouto",
+    "furigana": "いもうと",
+    "meaning": "younger sister"
+  },
+  {
+    "japanese": "友達",
+    "romaji": "tomodachi",
+    "furigana": "ともだち",
+    "meaning": "friend"
+  },
+  {
+    "japanese": "先生",
+    "romaji": "sensei",
+    "furigana": "せんせい",
+    "meaning": "teacher"
+  },
+  {
+    "japanese": "学生",
+    "romaji": "gakusei",
+    "furigana": "がくせい",
+    "meaning": "student"
+  },
+  {
+    "japanese": "人",
+    "romaji": "hito",
+    "furigana": "ひと",
+    "meaning": "person"
+  },
+  {
+    "japanese": "子供",
+    "romaji": "kodomo",
+    "furigana": "こども",
+    "meaning": "child"
+  },
+  {
+    "japanese": "大人",
+    "romaji": "otona",
+    "furigana": "おとな",
+    "meaning": "adult"
+  },
+  {
+    "japanese": "男",
+    "romaji": "otoko",
+    "furigana": "おとこ",
+    "meaning": "man"
+  },
+  {
+    "japanese": "女",
+    "romaji": "onna",
+    "furigana": "おんな",
+    "meaning": "woman"
+  },
+  {
+    "japanese": "名前",
+    "romaji": "namae",
+    "furigana": "なまえ",
+    "meaning": "name"
+  },
+  {
+    "japanese": "年齢",
+    "romaji": "nenrei",
+    "furigana": "ねんれい",
+    "meaning": "age"
+  },
+  {
+    "japanese": "誕生日",
+    "romaji": "tanjoubi",
+    "furigana": "たんじょうび",
+    "meaning": "birthday"
+  },
+  {
+    "japanese": "国",
+    "romaji": "kuni",
+    "furigana": "くに",
+    "meaning": "country"
+  },
+  {
+    "japanese": "日本",
+    "romaji": "nihon",
+    "furigana": "にほん",
+    "meaning": "Japan"
+  },
+  {
+    "japanese": "アメリカ",
+    "romaji": "amerika",
+    "furigana": "あめりか",
+    "meaning": "America"
+  },
+  {
+    "japanese": "中国",
+    "romaji": "chuugoku",
+    "furigana": "ちゅうごく",
+    "meaning": "China"
+  },
+  {
+    "japanese": "韓国",
+    "romaji": "kankoku",
+    "furigana": "かんこく",
+    "meaning": "Korea"
+  },
+  {
+    "japanese": "言語",
+    "romaji": "gengo",
+    "furigana": "げんご",
+    "meaning": "language"
+  },
+  {
+    "japanese": "日本語",
+    "romaji": "nihongo",
+    "furigana": "にほんご",
+    "meaning": "Japanese language"
+  },
+  {
+    "japanese": "英語",
+    "romaji": "eigo",
+    "furigana": "えいご",
+    "meaning": "English language"
+  },
+  {
+    "japanese": "家",
+    "romaji": "ie",
+    "furigana": "いえ",
+    "meaning": "house, home"
+  },
+  {
+    "japanese": "部屋",
+    "romaji": "heya",
+    "furigana": "へや",
+    "meaning": "room"
+  },
+  {
+    "japanese": "台所",
+    "romaji": "daidokoro",
+    "furigana": "だいどころ",
+    "meaning": "kitchen"
+  },
+  {
+    "japanese": "寝室",
+    "romaji": "shinshitsu",
+    "furigana": "しんしつ",
+    "meaning": "bedroom"
+  },
+  {
+    "japanese": "風呂",
+    "romaji": "furo",
+    "furigana": "ふろ",
+    "meaning": "bath"
+  },
+  {
+    "japanese": "トイレ",
+    "romaji": "toire",
+    "furigana": "といれ",
+    "meaning": "toilet"
+  },
+  {
+    "japanese": "玄関",
+    "romaji": "genkan",
+    "furigana": "げんかん",
+    "meaning": "entrance"
+  },
+  {
+    "japanese": "庭",
+    "romaji": "niwa",
+    "furigana": "にわ",
+    "meaning": "garden"
+  },
+  {
+    "japanese": "窓",
+    "romaji": "mado",
+    "furigana": "まど",
+    "meaning": "window"
+  },
+  {
+    "japanese": "ドア",
+    "romaji": "doa",
+    "furigana": "どあ",
+    "meaning": "door"
+  },
+  {
+    "japanese": "椅子",
+    "romaji": "isu",
+    "furigana": "いす",
+    "meaning": "chair"
+  },
+  {
+    "japanese": "机",
+    "romaji": "tsukue",
+    "furigana": "つくえ",
+    "meaning": "desk"
+  },
+  {
+    "japanese": "テーブル",
+    "romaji": "teeburu",
+    "furigana": "てーぶる",
+    "meaning": "table"
+  },
+  {
+    "japanese": "ベッド",
+    "romaji": "beddo",
+    "furigana": "べっど",
+    "meaning": "bed"
+  },
+  {
+    "japanese": "本",
+    "romaji": "hon",
+    "furigana": "ほん",
+    "meaning": "book"
+  },
+  {
+    "japanese": "新聞",
+    "romaji": "shinbun",
+    "furigana": "しんぶん",
+    "meaning": "newspaper"
+  },
+  {
+    "japanese": "雑誌",
+    "romaji": "zasshi",
+    "furigana": "ざっし",
+    "meaning": "magazine"
+  },
+  {
+    "japanese": "テレビ",
+    "romaji": "terebi",
+    "furigana": "てれび",
+    "meaning": "television"
+  },
+  {
+    "japanese": "ラジオ",
+    "romaji": "rajio",
+    "furigana": "らじお",
+    "meaning": "radio"
+  },
+  {
+    "japanese": "電話",
+    "romaji": "denwa",
+    "furigana": "でんわ",
+    "meaning": "telephone"
+  },
+  {
+    "japanese": "コンピューター",
+    "romaji": "konpyuutaa",
+    "furigana": "こんぴゅーたー",
+    "meaning": "computer"
+  },
+  {
+    "japanese": "車",
+    "romaji": "kuruma",
+    "furigana": "くるま",
+    "meaning": "car"
+  },
+  {
+    "japanese": "自転車",
+    "romaji": "jitensha",
+    "furigana": "じてんしゃ",
+    "meaning": "bicycle"
+  },
+  {
+    "japanese": "バス",
+    "romaji": "basu",
+    "furigana": "ばす",
+    "meaning": "bus"
+  },
+  {
+    "japanese": "電車",
+    "romaji": "densha",
+    "furigana": "でんしゃ",
+    "meaning": "train"
+  },
+  {
+    "japanese": "飛行機",
+    "romaji": "hikouki",
+    "furigana": "ひこうき",
+    "meaning": "airplane"
+  },
+  {
+    "japanese": "駅",
+    "romaji": "eki",
+    "furigana": "えき",
+    "meaning": "station"
+  },
+  {
+    "japanese": "空港",
+    "romaji": "kuukou",
+    "furigana": "くうこう",
+    "meaning": "airport"
+  },
+  {
+    "japanese": "病院",
+    "romaji": "byouin",
+    "furigana": "びょういん",
+    "meaning": "hospital"
+  },
+  {
+    "japanese": "学校",
+    "romaji": "gakkou",
+    "furigana": "がっこう",
+    "meaning": "school"
+  },
+  {
+    "japanese": "大学",
+    "romaji": "daigaku",
+    "furigana": "だいがく",
+    "meaning": "university"
+  },
+  {
+    "japanese": "会社",
+    "romaji": "kaisha",
+    "furigana": "かいしゃ",
+    "meaning": "company"
+  },
+  {
+    "japanese": "店",
+    "romaji": "mise",
+    "furigana": "みせ",
+    "meaning": "store, shop"
+  },
+  {
+    "japanese": "銀行",
+    "romaji": "ginkou",
+    "furigana": "ぎんこう",
+    "meaning": "bank"
+  },
+  {
+    "japanese": "郵便局",
+    "romaji": "yuubinkyoku",
+    "furigana": "ゆうびんきょく",
+    "meaning": "post office"
+  },
+  {
+    "japanese": "図書館",
+    "romaji": "toshokan",
+    "furigana": "としょかん",
+    "meaning": "library"
+  },
+  {
+    "japanese": "公園",
+    "romaji": "kouen",
+    "furigana": "こうえん",
+    "meaning": "park"
+  },
+  {
+    "japanese": "レストラン",
+    "romaji": "resutoran",
+    "furigana": "れすとらん",
+    "meaning": "restaurant"
+  },
+  {
+    "japanese": "カフェ",
+    "romaji": "kafe",
+    "furigana": "かふぇ",
+    "meaning": "cafe"
+  },
+  {
+    "japanese": "ホテル",
+    "romaji": "hoteru",
+    "furigana": "ほてる",
+    "meaning": "hotel"
+  },
+  {
+    "japanese": "食べ物",
+    "romaji": "tabemono",
+    "furigana": "たべもの",
+    "meaning": "food"
+  },
+  {
+    "japanese": "米",
+    "romaji": "kome",
+    "furigana": "こめ",
+    "meaning": "rice"
+  },
+  {
+    "japanese": "パン",
+    "romaji": "pan",
+    "furigana": "ぱん",
+    "meaning": "bread"
+  },
+  {
+    "japanese": "肉",
+    "romaji": "niku",
+    "furigana": "にく",
+    "meaning": "meat"
+  },
+  {
+    "japanese": "魚",
+    "romaji": "sakana",
+    "furigana": "さかな",
+    "meaning": "fish"
+  },
+  {
+    "japanese": "野菜",
+    "romaji": "yasai",
+    "furigana": "やさい",
+    "meaning": "vegetables"
+  },
+  {
+    "japanese": "果物",
+    "romaji": "kudamono",
+    "furigana": "くだもの",
+    "meaning": "fruit"
+  },
+  {
+    "japanese": "りんご",
+    "romaji": "ringo",
+    "furigana": "りんご",
+    "meaning": "apple"
+  },
+  {
+    "japanese": "みかん",
+    "romaji": "mikan",
+    "furigana": "みかん",
+    "meaning": "orange (mandarin)"
+  },
+  {
+    "japanese": "バナナ",
+    "romaji": "banana",
+    "furigana": "ばなな",
+    "meaning": "banana"
+  },
+  {
+    "japanese": "卵",
+    "romaji": "tamago",
+    "furigana": "たまご",
+    "meaning": "egg"
+  },
+  {
+    "japanese": "牛乳",
+    "romaji": "gyuunyuu",
+    "furigana": "ぎゅうにゅう",
+    "meaning": "milk"
+  },
+  {
+    "japanese": "水",
+    "romaji": "mizu",
+    "furigana": "みず",
+    "meaning": "water"
+  },
+  {
+    "japanese": "お茶",
+    "romaji": "ocha",
+    "furigana": "おちゃ",
+    "meaning": "tea"
+  },
+  {
+    "japanese": "コーヒー",
+    "romaji": "koohii",
+    "furigana": "こーひー",
+    "meaning": "coffee"
+  },
+  {
+    "japanese": "ジュース",
+    "romaji": "juusu",
+    "furigana": "じゅーす",
+    "meaning": "juice"
+  },
+  {
+    "japanese": "ビール",
+    "romaji": "biiru",
+    "furigana": "びーる",
+    "meaning": "beer"
+  },
+  {
+    "japanese": "お酒",
+    "romaji": "osake",
+    "furigana": "おさけ",
+    "meaning": "alcohol"
+  },
+  {
+    "japanese": "朝食",
+    "romaji": "choushoku",
+    "furigana": "ちょうしょく",
+    "meaning": "breakfast"
+  },
+  {
+    "japanese": "昼食",
+    "romaji": "chuushoku",
+    "furigana": "ちゅうしょく",
+    "meaning": "lunch"
+  },
+  {
+    "japanese": "夕食",
+    "romaji": "yuushoku",
+    "furigana": "ゆうしょく",
+    "meaning": "dinner"
+  },
+  {
+    "japanese": "服",
+    "romaji": "fuku",
+    "furigana": "ふく",
+    "meaning": "clothes"
+  },
+  {
+    "japanese": "シャツ",
+    "romaji": "shatsu",
+    "furigana": "しゃつ",
+    "meaning": "shirt"
+  },
+  {
+    "japanese": "ズボン",
+    "romaji": "zubon",
+    "furigana": "ずぼん",
+    "meaning": "pants, trousers"
+  },
+  {
+    "japanese": "スカート",
+    "romaji": "sukaato",
+    "furigana": "すかーと",
+    "meaning": "skirt"
+  },
+  {
+    "japanese": "靴",
+    "romaji": "kutsu",
+    "furigana": "くつ",
+    "meaning": "shoes"
+  },
+  {
+    "japanese": "帽子",
+    "romaji": "boushi",
+    "furigana": "ぼうし",
+    "meaning": "hat"
+  },
+  {
+    "japanese": "時計",
+    "romaji": "tokei",
+    "furigana": "とけい",
+    "meaning": "watch, clock"
+  },
+  {
+    "japanese": "眼鏡",
+    "romaji": "megane",
+    "furigana": "めがね",
+    "meaning": "glasses"
+  },
+  {
+    "japanese": "鞄",
+    "romaji": "kaban",
+    "furigana": "かばん",
+    "meaning": "bag"
+  },
+  {
+    "japanese": "財布",
+    "romaji": "saifu",
+    "furigana": "さいふ",
+    "meaning": "wallet"
+  },
+  {
+    "japanese": "お金",
+    "romaji": "okane",
+    "furigana": "おかね",
+    "meaning": "money"
+  },
+  {
+    "japanese": "仕事",
+    "romaji": "shigoto",
+    "furigana": "しごと",
+    "meaning": "work, job"
+  },
+  {
+    "japanese": "勉強",
+    "romaji": "benkyou",
+    "furigana": "べんきょう",
+    "meaning": "study"
+  },
+  {
+    "japanese": "宿題",
+    "romaji": "shukudai",
+    "furigana": "しゅくだい",
+    "meaning": "homework"
+  },
+  {
+    "japanese": "休み",
+    "romaji": "yasumi",
+    "furigana": "やすみ",
+    "meaning": "vacation, rest"
+  },
+  {
+    "japanese": "旅行",
+    "romaji": "ryokou",
+    "furigana": "りょこう",
+    "meaning": "travel"
+  },
+  {
+    "japanese": "買い物",
+    "romaji": "kaimono",
+    "furigana": "かいもの",
+    "meaning": "shopping"
+  },
+  {
+    "japanese": "スポーツ",
+    "romaji": "supootsu",
+    "furigana": "すぽーつ",
+    "meaning": "sports"
+  },
+  {
+    "japanese": "映画",
+    "romaji": "eiga",
+    "furigana": "えいが",
+    "meaning": "movie"
+  },
+  {
+    "japanese": "音楽",
+    "romaji": "ongaku",
+    "furigana": "おんがく",
+    "meaning": "music"
+  },
+  {
+    "japanese": "写真",
+    "romaji": "shashin",
+    "furigana": "しゃしん",
+    "meaning": "photograph"
+  },
+  {
+    "japanese": "天気",
+    "romaji": "tenki",
+    "furigana": "てんき",
+    "meaning": "weather"
+  },
+  {
+    "japanese": "雨",
+    "romaji": "ame",
+    "furigana": "あめ",
+    "meaning": "rain"
+  },
+  {
+    "japanese": "雪",
+    "romaji": "yuki",
+    "furigana": "ゆき",
+    "meaning": "snow"
+  },
+  {
+    "japanese": "風",
+    "romaji": "kaze",
+    "furigana": "かぜ",
+    "meaning": "wind"
+  },
+  {
+    "japanese": "太陽",
+    "romaji": "taiyou",
+    "furigana": "たいよう",
+    "meaning": "sun"
+  },
+  {
+    "japanese": "星",
+    "romaji": "hoshi",
+    "furigana": "ほし",
+    "meaning": "star"
+  },
+  {
+    "japanese": "海",
+    "romaji": "umi",
+    "furigana": "うみ",
+    "meaning": "sea, ocean"
+  },
+  {
+    "japanese": "山",
+    "romaji": "yama",
+    "furigana": "やま",
+    "meaning": "mountain"
+  },
+  {
+    "japanese": "川",
+    "romaji": "kawa",
+    "furigana": "かわ",
+    "meaning": "river"
+  },
+  {
+    "japanese": "木",
+    "romaji": "ki",
+    "furigana": "き",
+    "meaning": "tree"
+  },
+  {
+    "japanese": "花",
+    "romaji": "hana",
+    "furigana": "はな",
+    "meaning": "flower"
+  },
+  {
+    "japanese": "動物",
+    "romaji": "doubutsu",
+    "furigana": "どうぶつ",
+    "meaning": "animal"
+  },
+  {
+    "japanese": "犬",
+    "romaji": "inu",
+    "furigana": "いぬ",
+    "meaning": "dog"
+  },
+  {
+    "japanese": "猫",
+    "romaji": "neko",
+    "furigana": "ねこ",
+    "meaning": "cat"
+  },
+  {
+    "japanese": "鳥",
+    "romaji": "tori",
+    "furigana": "とり",
+    "meaning": "bird"
+  },
+  {
+    "japanese": "馬",
+    "romaji": "uma",
+    "furigana": "うま",
+    "meaning": "horse"
+  },
+  {
+    "japanese": "牛",
+    "romaji": "ushi",
+    "furigana": "うし",
+    "meaning": "cow"
+  },
+  {
+    "japanese": "豚",
+    "romaji": "buta",
+    "furigana": "ぶた",
+    "meaning": "pig"
+  },
+  {
+    "japanese": "色",
+    "romaji": "iro",
+    "furigana": "いろ",
+    "meaning": "color"
+  },
+  {
+    "japanese": "赤",
+    "romaji": "aka",
+    "furigana": "あか",
+    "meaning": "red"
+  },
+  {
+    "japanese": "青",
+    "romaji": "ao",
+    "furigana": "あお",
+    "meaning": "blue"
+  },
+  {
+    "japanese": "黄色",
+    "romaji": "kiiro",
+    "furigana": "きいろ",
+    "meaning": "yellow"
+  },
+  {
+    "japanese": "緑",
+    "romaji": "midori",
+    "furigana": "みどり",
+    "meaning": "green"
+  },
+  {
+    "japanese": "白",
+    "romaji": "shiro",
+    "furigana": "しろ",
+    "meaning": "white"
+  },
+  {
+    "japanese": "黒",
+    "romaji": "kuro",
+    "furigana": "くろ",
+    "meaning": "black"
+  },
+  {
+    "japanese": "茶色",
+    "romaji": "chairo",
+    "furigana": "ちゃいろ",
+    "meaning": "brown"
+  },
+  {
+    "japanese": "数",
+    "romaji": "kazu",
+    "furigana": "かず",
+    "meaning": "number"
+  },
+  {
+    "japanese": "一",
+    "romaji": "ichi",
+    "furigana": "いち",
+    "meaning": "one"
+  },
+  {
+    "japanese": "二",
+    "romaji": "ni",
+    "furigana": "に",
+    "meaning": "two"
+  },
+  {
+    "japanese": "三",
+    "romaji": "san",
+    "furigana": "さん",
+    "meaning": "three"
+  },
+  {
+    "japanese": "四",
+    "romaji": "yon",
+    "furigana": "よん",
+    "meaning": "four"
+  },
+  {
+    "japanese": "五",
+    "romaji": "go",
+    "furigana": "ご",
+    "meaning": "five"
+  },
+  {
+    "japanese": "六",
+    "romaji": "roku",
+    "furigana": "ろく",
+    "meaning": "six"
+  },
+  {
+    "japanese": "七",
+    "romaji": "nana",
+    "furigana": "なな",
+    "meaning": "seven"
+  },
+  {
+    "japanese": "八",
+    "romaji": "hachi",
+    "furigana": "はち",
+    "meaning": "eight"
+  },
+  {
+    "japanese": "九",
+    "romaji": "kyuu",
+    "furigana": "きゅう",
+    "meaning": "nine"
+  },
+  {
+    "japanese": "十",
+    "romaji": "juu",
+    "furigana": "じゅう",
+    "meaning": "ten"
+  },
+  {
+    "japanese": "百",
+    "romaji": "hyaku",
+    "furigana": "ひゃく",
+    "meaning": "hundred"
+  },
+  {
+    "japanese": "千",
+    "romaji": "sen",
+    "furigana": "せん",
+    "meaning": "thousand"
+  },
+  {
+    "japanese": "万",
+    "romaji": "man",
+    "furigana": "まん",
+    "meaning": "ten thousand"
+  },
+  {
+    "japanese": "時間",
+    "romaji": "jikan",
+    "furigana": "じかん",
+    "meaning": "time"
+  },
+  {
+    "japanese": "今日",
+    "romaji": "kyou",
+    "furigana": "きょう",
+    "meaning": "today"
+  },
+  {
+    "japanese": "昨日",
+    "romaji": "kinou",
+    "furigana": "きのう",
+    "meaning": "yesterday"
+  },
+  {
+    "japanese": "明日",
+    "romaji": "ashita",
+    "furigana": "あした",
+    "meaning": "tomorrow"
+  },
+  {
+    "japanese": "朝",
+    "romaji": "asa",
+    "furigana": "あさ",
+    "meaning": "morning"
+  },
+  {
+    "japanese": "昼",
+    "romaji": "hiru",
+    "furigana": "ひる",
+    "meaning": "noon, daytime"
+  },
+  {
+    "japanese": "夜",
+    "romaji": "yoru",
+    "furigana": "よる",
+    "meaning": "night"
+  },
+  {
+    "japanese": "夕方",
+    "romaji": "yuugata",
+    "furigana": "ゆうがた",
+    "meaning": "evening"
+  },
+  {
+    "japanese": "週",
+    "romaji": "shuu",
+    "furigana": "しゅう",
+    "meaning": "week"
+  },
+  {
+    "japanese": "月曜日",
+    "romaji": "getsuyoubi",
+    "furigana": "げつようび",
+    "meaning": "Monday"
+  },
+  {
+    "japanese": "火曜日",
+    "romaji": "kayoubi",
+    "furigana": "かようび",
+    "meaning": "Tuesday"
+  },
+  {
+    "japanese": "水曜日",
+    "romaji": "suiyoubi",
+    "furigana": "すいようび",
+    "meaning": "Wednesday"
+  },
+  {
+    "japanese": "木曜日",
+    "romaji": "mokuyoubi",
+    "furigana": "もくようび",
+    "meaning": "Thursday"
+  },
+  {
+    "japanese": "金曜日",
+    "romaji": "kinyoubi",
+    "furigana": "きんようび",
+    "meaning": "Friday"
+  },
+  {
+    "japanese": "土曜日",
+    "romaji": "doyoubi",
+    "furigana": "どようび",
+    "meaning": "Saturday"
+  },
+  {
+    "japanese": "日曜日",
+    "romaji": "nichiyoubi",
+    "furigana": "にちようび",
+    "meaning": "Sunday"
+  },
+  {
+    "japanese": "月",
+    "romaji": "gatsu",
+    "furigana": "がつ",
+    "meaning": "month, the moon"
+  },
+  {
+    "japanese": "年",
+    "romaji": "nen",
+    "furigana": "ねん",
+    "meaning": "year"
+  },
+  {
+    "japanese": "春",
+    "romaji": "haru",
+    "furigana": "はる",
+    "meaning": "spring"
+  },
+  {
+    "japanese": "夏",
+    "romaji": "natsu",
+    "furigana": "なつ",
+    "meaning": "summer"
+  },
+  {
+    "japanese": "秋",
+    "romaji": "aki",
+    "furigana": "あき",
+    "meaning": "autumn, fall"
+  },
+  {
+    "japanese": "冬",
+    "romaji": "fuyu",
+    "furigana": "ふゆ",
+    "meaning": "winter"
+  },
+  {
+    "japanese": "大きい",
+    "romaji": "ookii",
+    "furigana": "おおきい",
+    "meaning": "big, large"
+  },
+  {
+    "japanese": "小さい",
+    "romaji": "chiisai",
+    "furigana": "ちいさい",
+    "meaning": "small"
+  },
+  {
+    "japanese": "新しい",
+    "romaji": "atarashii",
+    "furigana": "あたらしい",
+    "meaning": "new"
+  },
+  {
+    "japanese": "古い",
+    "romaji": "furui",
+    "furigana": "ふるい",
+    "meaning": "old"
+  },
+  {
+    "japanese": "良い",
+    "romaji": "yoi",
+    "furigana": "よい",
+    "meaning": "good"
+  },
+  {
+    "japanese": "悪い",
+    "romaji": "warui",
+    "furigana": "わるい",
+    "meaning": "bad"
+  },
+  {
+    "japanese": "高い",
+    "romaji": "takai",
+    "furigana": "たかい",
+    "meaning": "high, expensive"
+  },
+  {
+    "japanese": "安い",
+    "romaji": "yasui",
+    "furigana": "やすい",
+    "meaning": "cheap"
+  },
+  {
+    "japanese": "長い",
+    "romaji": "nagai",
+    "furigana": "ながい",
+    "meaning": "long"
+  },
+  {
+    "japanese": "短い",
+    "romaji": "mijikai",
+    "furigana": "みじかい",
+    "meaning": "short"
+  },
+  {
+    "japanese": "太い",
+    "romaji": "futoi",
+    "furigana": "ふとい",
+    "meaning": "thick, fat"
+  },
+  {
+    "japanese": "細い",
+    "romaji": "hosoi",
+    "furigana": "ほそい",
+    "meaning": "thin"
+  },
+  {
+    "japanese": "重い",
+    "romaji": "omoi",
+    "furigana": "おもい",
+    "meaning": "heavy"
+  },
+  {
+    "japanese": "軽い",
+    "romaji": "karui",
+    "furigana": "かるい",
+    "meaning": "light (weight)"
+  },
+  {
+    "japanese": "熱い",
+    "romaji": "atsui",
+    "furigana": "あつい",
+    "meaning": "hot"
+  },
+  {
+    "japanese": "冷たい",
+    "romaji": "tsumetai",
+    "furigana": "つめたい",
+    "meaning": "cold"
+  },
+  {
+    "japanese": "暖かい",
+    "romaji": "atatakai",
+    "furigana": "あたたかい",
+    "meaning": "warm"
+  },
+  {
+    "japanese": "涼しい",
+    "romaji": "suzushii",
+    "furigana": "すずしい",
+    "meaning": "cool"
+  },
+  {
+    "japanese": "美しい",
+    "romaji": "utsukushii",
+    "furigana": "うつくしい",
+    "meaning": "beautiful"
+  },
+  {
+    "japanese": "きれい",
+    "romaji": "kirei",
+    "furigana": "きれい",
+    "meaning": "pretty, clean"
+  },
+  {
+    "japanese": "汚い",
+    "romaji": "kitanai",
+    "furigana": "きたない",
+    "meaning": "dirty"
+  },
+  {
+    "japanese": "楽しい",
+    "romaji": "tanoshii",
+    "furigana": "たのしい",
+    "meaning": "fun, enjoyable"
+  },
+  {
+    "japanese": "面白い",
+    "romaji": "omoshiroi",
+    "furigana": "おもしろい",
+    "meaning": "interesting, funny"
+  },
+  {
+    "japanese": "つまらない",
+    "romaji": "tsumaranai",
+    "furigana": "つまらない",
+    "meaning": "boring"
+  },
+  {
+    "japanese": "忙しい",
+    "romaji": "isogashii",
+    "furigana": "いそがしい",
+    "meaning": "busy"
+  },
+  {
+    "japanese": "暇",
+    "romaji": "hima",
+    "furigana": "ひま",
+    "meaning": "free time"
+  },
+  {
+    "japanese": "元気",
+    "romaji": "genki",
+    "furigana": "げんき",
+    "meaning": "healthy, energetic"
+  },
+  {
+    "japanese": "病気",
+    "romaji": "byouki",
+    "furigana": "びょうき",
+    "meaning": "illness, sick"
+  },
+  {
+    "japanese": "静か",
+    "romaji": "shizuka",
+    "furigana": "しずか",
+    "meaning": "quiet"
+  },
+  {
+    "japanese": "うるさい",
+    "romaji": "urusai",
+    "furigana": "うるさい",
+    "meaning": "noisy"
+  },
+  {
+    "japanese": "簡単",
+    "romaji": "kantan",
+    "furigana": "かんたん",
+    "meaning": "easy, simple"
+  },
+  {
+    "japanese": "難しい",
+    "romaji": "muzukashii",
+    "furigana": "むずかしい",
+    "meaning": "difficult"
+  },
+  {
+    "japanese": "有名",
+    "romaji": "yuumei",
+    "furigana": "ゆうめい",
+    "meaning": "famous"
+  },
+  {
+    "japanese": "便利",
+    "romaji": "benri",
+    "furigana": "べんり",
+    "meaning": "convenient"
+  },
+  {
+    "japanese": "です",
+    "romaji": "desu",
+    "furigana": "です",
+    "meaning": "is, am, are (polite)"
+  },
+  {
+    "japanese": "である",
+    "romaji": "de aru",
+    "furigana": "である",
+    "meaning": "is, am, are (formal)"
+  },
+  {
+    "japanese": "だ",
+    "romaji": "da",
+    "furigana": "だ",
+    "meaning": "is, am, are (casual)"
+  },
+  {
+    "japanese": "する",
+    "romaji": "suru",
+    "furigana": "する",
+    "meaning": "to do"
+  },
+  {
+    "japanese": "行く",
+    "romaji": "iku",
+    "furigana": "いく",
+    "meaning": "to go"
+  },
+  {
+    "japanese": "来る",
+    "romaji": "kuru",
+    "furigana": "くる",
+    "meaning": "to come"
+  },
+  {
+    "japanese": "帰る",
+    "romaji": "kaeru",
+    "furigana": "かえる",
+    "meaning": "to return, go home"
+  },
+  {
+    "japanese": "入る",
+    "romaji": "hairu",
+    "furigana": "はいる",
+    "meaning": "to enter"
+  },
+  {
+    "japanese": "出る",
+    "romaji": "deru",
+    "furigana": "でる",
+    "meaning": "to exit, go out"
+  },
+  {
+    "japanese": "立つ",
+    "romaji": "tatsu",
+    "furigana": "たつ",
+    "meaning": "to stand"
+  },
+  {
+    "japanese": "座る",
+    "romaji": "suwaru",
+    "furigana": "すわる",
+    "meaning": "to sit"
+  },
+  {
+    "japanese": "寝る",
+    "romaji": "neru",
+    "furigana": "ねる",
+    "meaning": "to sleep"
+  },
+  {
+    "japanese": "起きる",
+    "romaji": "okiru",
+    "furigana": "おきる",
+    "meaning": "to wake up"
+  },
+  {
+    "japanese": "食べる",
+    "romaji": "taberu",
+    "furigana": "たべる",
+    "meaning": "to eat"
+  },
+  {
+    "japanese": "飲む",
+    "romaji": "nomu",
+    "furigana": "のむ",
+    "meaning": "to drink"
+  },
+  {
+    "japanese": "見る",
+    "romaji": "miru",
+    "furigana": "みる",
+    "meaning": "to see, watch"
+  },
+  {
+    "japanese": "聞く",
+    "romaji": "kiku",
+    "furigana": "きく",
+    "meaning": "to hear, listen"
+  },
+  {
+    "japanese": "話す",
+    "romaji": "hanasu",
+    "furigana": "はなす",
+    "meaning": "to speak, talk"
+  },
+  {
+    "japanese": "言う",
+    "romaji": "iu",
+    "furigana": "いう",
+    "meaning": "to say"
+  },
+  {
+    "japanese": "読む",
+    "romaji": "yomu",
+    "furigana": "よむ",
+    "meaning": "to read"
+  },
+  {
+    "japanese": "書く",
+    "romaji": "kaku",
+    "furigana": "かく",
+    "meaning": "to write"
+  },
+  {
+    "japanese": "買う",
+    "romaji": "kau",
+    "furigana": "かう",
+    "meaning": "to buy"
+  },
+  {
+    "japanese": "売る",
+    "romaji": "uru",
+    "furigana": "うる",
+    "meaning": "to sell"
+  },
+  {
+    "japanese": "作る",
+    "romaji": "tsukuru",
+    "furigana": "つくる",
+    "meaning": "to make"
+  },
+  {
+    "japanese": "使う",
+    "romaji": "tsukau",
+    "furigana": "つかう",
+    "meaning": "to use"
+  },
+  {
+    "japanese": "持つ",
+    "romaji": "motsu",
+    "furigana": "もつ",
+    "meaning": "to hold, have"
+  },
+  {
+    "japanese": "取る",
+    "romaji": "toru",
+    "furigana": "とる",
+    "meaning": "to take"
+  },
+  {
+    "japanese": "置く",
+    "romaji": "oku",
+    "furigana": "おく",
+    "meaning": "to put, place"
+  },
+  {
+    "japanese": "開ける",
+    "romaji": "akeru",
+    "furigana": "あける",
+    "meaning": "to open"
+  },
+  {
+    "japanese": "閉める",
+    "romaji": "shimeru",
+    "furigana": "しめる",
+    "meaning": "to close"
+  },
+  {
+    "japanese": "始める",
+    "romaji": "hajimeru",
+    "furigana": "はじめる",
+    "meaning": "to begin"
+  },
+  {
+    "japanese": "終わる",
+    "romaji": "owaru",
+    "furigana": "おわる",
+    "meaning": "to end"
+  },
+  {
+    "japanese": "止める",
+    "romaji": "tomeru",
+    "furigana": "とめる",
+    "meaning": "to stop"
+  },
+  {
+    "japanese": "歩く",
+    "romaji": "aruku",
+    "furigana": "あるく",
+    "meaning": "to walk"
+  },
+  {
+    "japanese": "走る",
+    "romaji": "hashiru",
+    "furigana": "はしる",
+    "meaning": "to run"
+  },
+  {
+    "japanese": "泳ぐ",
+    "romaji": "oyogu",
+    "furigana": "およぐ",
+    "meaning": "to swim"
+  },
+  {
+    "japanese": "飛ぶ",
+    "romaji": "tobu",
+    "furigana": "とぶ",
+    "meaning": "to fly"
+  },
+  {
+    "japanese": "洗う",
+    "romaji": "arau",
+    "furigana": "あらう",
+    "meaning": "to wash"
+  },
+  {
+    "japanese": "掃除",
+    "romaji": "souji",
+    "furigana": "そうじ",
+    "meaning": "cleaning"
+  },
+  {
+    "japanese": "料理",
+    "romaji": "ryouri",
+    "furigana": "りょうり",
+    "meaning": "cooking"
+  },
+  {
+    "japanese": "運転",
+    "romaji": "unten",
+    "furigana": "うんてん",
+    "meaning": "driving"
+  },
+  {
+    "japanese": "遊ぶ",
+    "romaji": "asobu",
+    "furigana": "あそぶ",
+    "meaning": "to play"
+  },
+  {
+    "japanese": "笑う",
+    "romaji": "warau",
+    "furigana": "わらう",
+    "meaning": "to laugh"
+  },
+  {
+    "japanese": "泣く",
+    "romaji": "naku",
+    "furigana": "なく",
+    "meaning": "to cry"
+  },
+  {
+    "japanese": "歌う",
+    "romaji": "utau",
+    "furigana": "うたう",
+    "meaning": "to sing"
+  },
+  {
+    "japanese": "踊る",
+    "romaji": "odoru",
+    "furigana": "おどる",
+    "meaning": "to dance"
+  },
+  {
+    "japanese": "呼ぶ",
+    "romaji": "yobu",
+    "furigana": "よぶ",
+    "meaning": "to call"
+  },
+  {
+    "japanese": "待つ",
+    "romaji": "matsu",
+    "furigana": "まつ",
+    "meaning": "to wait"
+  },
+  {
+    "japanese": "会う",
+    "romaji": "au",
+    "furigana": "あう",
+    "meaning": "to meet"
+  },
+  {
+    "japanese": "知る",
+    "romaji": "shiru",
+    "furigana": "しる",
+    "meaning": "to know"
+  },
+  {
+    "japanese": "考える",
+    "romaji": "kangaeru",
+    "furigana": "かんがえる",
+    "meaning": "to think"
+  },
+  {
+    "japanese": "忘れる",
+    "romaji": "wasureru",
+    "furigana": "わすれる",
+    "meaning": "to forget"
+  },
+  {
+    "japanese": "覚える",
+    "romaji": "oboeru",
+    "furigana": "おぼえる",
+    "meaning": "to remember"
+  },
+  {
+    "japanese": "教える",
+    "romaji": "oshieru",
+    "furigana": "おしえる",
+    "meaning": "to teach"
+  },
+  {
+    "japanese": "習う",
+    "romaji": "narau",
+    "furigana": "ならう",
+    "meaning": "to learn"
+  },
+  {
+    "japanese": "手伝う",
+    "romaji": "tetsudau",
+    "furigana": "てつだう",
+    "meaning": "to help"
+  },
+  {
+    "japanese": "貸す",
+    "romaji": "kasu",
+    "furigana": "かす",
+    "meaning": "to lend"
+  },
+  {
+    "japanese": "借りる",
+    "romaji": "kariru",
+    "furigana": "かりる",
+    "meaning": "to borrow"
+  },
+  {
+    "japanese": "あげる",
+    "romaji": "ageru",
+    "furigana": "あげる",
+    "meaning": "to give"
+  },
+  {
+    "japanese": "もらう",
+    "romaji": "morau",
+    "furigana": "もらう",
+    "meaning": "to receive"
+  },
+  {
+    "japanese": "送る",
+    "romaji": "okuru",
+    "furigana": "おくる",
+    "meaning": "to send"
+  },
+  {
+    "japanese": "着る",
+    "romaji": "kiru",
+    "furigana": "きる",
+    "meaning": "to wear (clothes)"
+  },
+  {
+    "japanese": "脱ぐ",
+    "romaji": "nugu",
+    "furigana": "ぬぐ",
+    "meaning": "to take off (clothes)"
+  },
+  {
+    "japanese": "住む",
+    "romaji": "sumu",
+    "furigana": "すむ",
+    "meaning": "to live (somewhere)"
+  },
+  {
+    "japanese": "働く",
+    "romaji": "hataraku",
+    "furigana": "はたらく",
+    "meaning": "to work"
+  },
+  {
+    "japanese": "休む",
+    "romaji": "yasumu",
+    "furigana": "やすむ",
+    "meaning": "to rest"
+  },
+  {
+    "japanese": "死ぬ",
+    "romaji": "shinu",
+    "furigana": "しぬ",
+    "meaning": "to die"
+  },
+  {
+    "japanese": "生まれる",
+    "romaji": "umareru",
+    "furigana": "うまれる",
+    "meaning": "to be born"
+  },
+  {
+    "japanese": "結婚",
+    "romaji": "kekkon",
+    "furigana": "けっこん",
+    "meaning": "marriage"
+  },
+  {
+    "japanese": "はい",
+    "romaji": "hai",
+    "furigana": "はい",
+    "meaning": "yes"
+  },
+  {
+    "japanese": "いいえ",
+    "romaji": "iie",
+    "furigana": "いいえ",
+    "meaning": "no"
+  },
+  {
+    "japanese": "こんにちは",
+    "romaji": "konnichiwa",
+    "furigana": "こんにちは",
+    "meaning": "hello, good afternoon"
+  },
+  {
+    "japanese": "おはよう",
+    "romaji": "ohayou",
+    "furigana": "おはよう",
+    "meaning": "good morning"
+  },
+  {
+    "japanese": "こんばんは",
+    "romaji": "konbanwa",
+    "furigana": "こんばんは",
+    "meaning": "good evening"
+  },
+  {
+    "japanese": "さようなら",
+    "romaji": "sayounara",
+    "furigana": "さようなら",
+    "meaning": "goodbye"
+  },
+  {
+    "japanese": "おやすみ",
+    "romaji": "oyasumi",
+    "furigana": "おやすみ",
+    "meaning": "good night"
+  },
+  {
+    "japanese": "ありがとう",
+    "romaji": "arigatou",
+    "furigana": "ありがとう",
+    "meaning": "thank you"
+  },
+  {
+    "japanese": "すみません",
+    "romaji": "sumimasen",
+    "furigana": "すみません",
+    "meaning": "excuse me, sorry"
+  },
+  {
+    "japanese": "ごめんなさい",
+    "romaji": "gomennasai",
+    "furigana": "ごめんなさい",
+    "meaning": "I'm sorry"
+  },
+  {
+    "japanese": "お疲れ様",
+    "romaji": "otsukaresama",
+    "furigana": "おつかれさま",
+    "meaning": "good work, thank you for your hard work"
+  },
+  {
+    "japanese": "いらっしゃいませ",
+    "romaji": "irasshaimase",
+    "furigana": "いらっしゃいませ",
+    "meaning": "welcome (to a store)"
+  },
+  {
+    "japanese": "いただきます",
+    "romaji": "itadakimasu",
+    "furigana": "いただきます",
+    "meaning": "said before eating"
+  },
+  {
+    "japanese": "ごちそうさま",
+    "romaji": "gochisousama",
+    "furigana": "ごちそうさま",
+    "meaning": "said after eating"
+  },
+  {
+    "japanese": "お元気ですか",
+    "romaji": "ogenki desu ka",
+    "furigana": "おげんきですか",
+    "meaning": "how are you?"
+  },
+  {
+    "japanese": "どこ",
+    "romaji": "doko",
+    "furigana": "どこ",
+    "meaning": "where"
+  },
+  {
+    "japanese": "何",
+    "romaji": "nani",
+    "furigana": "なに",
+    "meaning": "what"
+  },
+  {
+    "japanese": "いつ",
+    "romaji": "itsu",
+    "furigana": "いつ",
+    "meaning": "when"
+  },
+  {
+    "japanese": "誰",
+    "romaji": "dare",
+    "furigana": "だれ",
+    "meaning": "who"
+  },
+  {
+    "japanese": "なぜ",
+    "romaji": "naze",
+    "furigana": "なぜ",
+    "meaning": "why"
+  },
+  {
+    "japanese": "どう",
+    "romaji": "dou",
+    "furigana": "どう",
+    "meaning": "how"
+  },
+  {
+    "japanese": "いくら",
+    "romaji": "ikura",
+    "furigana": "いくら",
+    "meaning": "how much"
+  },
+  {
+    "japanese": "ここ",
+    "romaji": "koko",
+    "furigana": "ここ",
+    "meaning": "here"
+  },
+  {
+    "japanese": "そこ",
+    "romaji": "soko",
+    "furigana": "そこ",
+    "meaning": "there"
+  },
+  {
+    "japanese": "あそこ",
+    "romaji": "asoko",
+    "furigana": "あそこ",
+    "meaning": "over there"
+  },
+  {
+    "japanese": "これ",
+    "romaji": "kore",
+    "furigana": "これ",
+    "meaning": "this"
+  },
+  {
+    "japanese": "それ",
+    "romaji": "sore",
+    "furigana": "それ",
+    "meaning": "that"
+  },
+  {
+    "japanese": "あれ",
+    "romaji": "are",
+    "furigana": "あれ",
+    "meaning": "that over there"
+  },
+  {
+    "japanese": "この",
+    "romaji": "kono",
+    "furigana": "この",
+    "meaning": "this (before noun)"
+  },
+  {
+    "japanese": "その",
+    "romaji": "sono",
+    "furigana": "その",
+    "meaning": "that (before noun)"
+  },
+  {
+    "japanese": "あの",
+    "romaji": "ano",
+    "furigana": "あの",
+    "meaning": "that over there (before noun)"
+  },
+  {
+    "japanese": "とても",
+    "romaji": "totemo",
+    "furigana": "とても",
+    "meaning": "very"
+  },
+  {
+    "japanese": "少し",
+    "romaji": "sukoshi",
+    "furigana": "すこし",
+    "meaning": "a little"
+  },
+  {
+    "japanese": "たくさん",
+    "romaji": "takusan",
+    "furigana": "たくさん",
+    "meaning": "a lot, many"
+  },
+  {
+    "japanese": "全部",
+    "romaji": "zenbu",
+    "furigana": "ぜんぶ",
+    "meaning": "all, everything"
+  },
+  {
+    "japanese": "何も",
+    "romaji": "nani mo",
+    "furigana": "なにも",
+    "meaning": "nothing"
+  },
+  {
+    "japanese": "もう",
+    "romaji": "mou",
+    "furigana": "もう",
+    "meaning": "already"
+  },
+  {
+    "japanese": "まだ",
+    "romaji": "mada",
+    "furigana": "まだ",
+    "meaning": "still, not yet"
+  },
+  {
+    "japanese": "ちょっと",
+    "romaji": "chotto",
+    "furigana": "ちょっと",
+    "meaning": "a little bit"
+  },
+  {
+    "japanese": "よく",
+    "romaji": "yoku",
+    "furigana": "よく",
+    "meaning": "well, often"
+  },
+  {
+    "japanese": "あまり",
+    "romaji": "amari",
+    "furigana": "あまり",
+    "meaning": "not very (with negative)"
+  },
+  {
+    "japanese": "全然",
+    "romaji": "zenzen",
+    "furigana": "ぜんぜん",
+    "meaning": "not at all (with negative)"
+  },
+  {
+    "japanese": "いつも",
+    "romaji": "itsumo",
+    "furigana": "いつも",
+    "meaning": "always"
+  },
+  {
+    "japanese": "時々",
+    "romaji": "tokidoki",
+    "furigana": "ときどき",
+    "meaning": "sometimes"
+  },
+  {
+    "japanese": "そして",
+    "romaji": "soshite",
+    "furigana": "そして",
+    "meaning": "and then"
+  },
+  {
+    "japanese": "でも",
+    "romaji": "demo",
+    "furigana": "でも",
+    "meaning": "but"
+  },
+  {
+    "japanese": "だから",
+    "romaji": "dakara",
+    "furigana": "だから",
+    "meaning": "so, therefore"
+  },
+  {
+    "japanese": "ところで",
+    "romaji": "tokoro de",
+    "furigana": "ところで",
+    "meaning": "by the way"
+  }
+]
+    

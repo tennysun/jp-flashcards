@@ -13,7 +13,6 @@
   max-width: calc(100vw - 32px);
   box-sizing: border-box;
   margin: 0 auto;
-  
 }
 
 .option {
@@ -32,7 +31,7 @@
   transition: all 0.2s ease;
   border-right: 1px solid var(--gray-border);
   border-bottom: 1px solid var(--gray-border);
-  box-sizing: border-box; /* ensures padding doesn't overflow */
+  box-sizing: border-box;
 }
 
 #options .option:nth-child(3n) {
@@ -47,203 +46,573 @@ body.dark .option {
   border-color: rgba(255,255,255,0.1);
 }
 
-    :root {
-      --bg-light: #f5f5f5;
-      --bg-dark: #121212;
-      --fg-light: #000;
-      --fg-dark: #eee;
-      --card-light: #fff;
-      --card-dark: #1e1e1e;
-      --green: #4ade80;
-      --red: #f87171;
-      --gray-border: rgba(150,150,150,0.25);
-    }
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: var(--bg-light);
-      color: var(--fg-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      transition: background 0.3s, color 0.3s;
-      user-select: none;
-      overflow-x: hidden;
-      padding: 16px;
-      box-sizing: border-box;
-    }
-    button,
-    #menu,
-    .btn,
-    .quiz-ui,
-    h1,
-    h2,
-    p {
-      font-family: 'Rubik', sans-serif;
-    }
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--fg-dark);
-    }
-    #toggle-theme {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 28px;
-        background: #e5e5e7;
-        border: none;
-        border-radius: 14px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        outline: none;
-        padding: 0;
-        }
+:root {
+  --bg-light: #f5f5f5;
+  --bg-dark: #121212;
+  --fg-light: #000;
+  --fg-dark: #eee;
+  --card-light: #fff;
+  --card-dark: #1e1e1e;
+  --green: #4ade80;
+  --red: #f87171;
+  --gray-border: rgba(150,150,150,0.25);
+}
 
-        #toggle-theme::after {
-            content: '';
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            width: 26px;
-            height: 26px;
-            font-size: 24px;
-            transition: transform 0.3s ease, filter 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('sun.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            }
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg-light);
+  color: var(--fg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+  user-select: none;
+  overflow-x: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+}
 
-        body.dark #toggle-theme {
-        background: #303030;
-        }
-        body.dark #toggle-theme::after {
-            content: '';
-            background-image: url('moon.png');
-            transform: translateX(22px);
-            }
+button, #menu, .btn, .quiz-ui, h1, h2, p {
+  font-family: 'Rubik', sans-serif;
+}
 
-        #toggle-theme:hover::after {
-            filter: brightness(1.10);
-        }
-    #menu, #quiz {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .btn {
-      background: var(--card-light);
-      color: inherit;
-      border-radius: 8px;
-      border: 1px solid var(--gray-border);
-      padding: 12px 24px;
-      cursor: pointer;
-      font-size: 1rem;
-      width: 200px;
-      transition: background 0.2s ease;
-    }
-    .btn.disabled {
-      background: rgba(0, 0, 0, 0.05);
-      pointer-events: none;
-    }
-    .btn:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-    body.dark .btn {
-      background: var(--card-dark, #222);
-      border: 1px solid var(--gray-border, #555);
-      color: var(--text-dark, #ddd);
-    }
+body.dark {
+  background: var(--bg-dark);
+  color: var(--fg-dark);
+}
 
-    body.dark .btn:hover {
-      background: var(--accent); /* same light gray */
-    } 
-    body.dark .btn.disabled {
-      background: var(--accent);
-    }
-    #quiz-word,
-    #quiz-reading {
-      font-family: 'Noto Sans JP', sans-serif;
-    }
+#toggle-theme {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 28px;
+  background: #e5e5e7;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  outline: none;
+  padding: 0;
+}
 
-    #card {
-      background: var(--card-light);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      width: 300px;
-      max-width: calc(100vw - 32px);
-      box-sizing: border-box;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-      cursor: pointer;
-      
-    }
+#toggle-theme::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 26px;
+  height: 26px;
+  font-size: 24px;
+  transition: transform 0.3s ease, filter 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('sun.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
+body.dark #toggle-theme {
+  background: #303030;
+}
+body.dark #toggle-theme::after {
+  content: '';
+  background-image: url('moon.png');
+  transform: translateX(22px);
+}
 
-    body.dark #card {
-      background: var(--card-dark);
-    }
-    .kanji {
-      font-size: 2em;
-      font-weight: bold;
-    }
-    .furigana {
-      font-size: 0.8em;
-      margin-top: 4px;
-    }
-    #options-wrapper {
-      border-radius: 12px;
-      overflow: hidden;
-      width: 342px;
-      max-width: calc(100vw - 32px);
-      margin: 0 auto;
-      box-sizing: border-box;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .option:hover {
-      background-color: rgba(0,0,0,0.01);
-    }
-    body.dark .option:hover {
-      background-color: rgba(0,0,0,0.01);
-    }
-    .option.correct {
+#toggle-theme:hover::after {
+  filter: brightness(1.10);
+}
+
+#settings-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 50px;
+  height: 28px;
+  background: #e5e5e7;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+body.dark #settings-btn {
+  background: #303030;
+  color: #eee;
+}
+
+#settings-btn:hover {
+  filter: brightness(1.10);
+}
+
+#settings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+#settings-content {
+  background: var(--card-light);
+  border-radius: 12px;
+  padding: 24px;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: background 0.3s;
+}
+
+body.dark #settings-content {
+  background: var(--card-dark);
+}
+
+#settings-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+#settings-close:hover {
+  opacity: 1;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.setting-label {
+  flex: 1;
+  text-align: left;
+  margin-right: 12px;
+}
+
+.setting-toggle {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  outline: none;
+  padding: 0;
+  position: relative;
+}
+
+.setting-toggle.active {
+  background: var(--green);
+}
+
+.setting-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.setting-toggle.active::after {
+  transform: translateX(20px);
+}
+
+#menu, #quiz {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Dropdown Styles */
+.dropdown-container {
+  position: relative;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+}
+
+.dropdown-btn {
+  width: 100%;
+  background: var(--card-light);
+  border: 1px solid var(--gray-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.dropdown-btn:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .dropdown-btn {
+  background: var(--card-dark);
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.dark .dropdown-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+  font-size: 0.8em;
+}
+
+.dropdown-btn.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card-light);
+  border: 1px solid var(--gray-border);
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+}
+
+body.dark .dropdown-content {
+  background: var(--card-dark);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.dropdown-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--gray-border);
+  display: flex;
+  gap: 8px;
+}
+
+body.dark .dropdown-header {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.select-all-btn, .clear-all-btn {
+  background: none;
+  border: 1px solid var(--gray-border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: background 0.2s ease;
+  color: inherit;
+}
+
+.select-all-btn:hover, .clear-all-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark .select-all-btn, body.dark .clear-all-btn {
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.dark .select-all-btn:hover, body.dark .clear-all-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.list-items {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list-item {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .list-item {
+  border-color: rgba(255,255,255,0.05);
+}
+
+body.dark .list-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.list-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.list-info {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.list-name {
+  font-weight: 500;
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.list-count {
+  font-size: 0.8em;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  padding: 4px;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.list-item:hover .delete-btn {
+  opacity: 0.7;
+}
+
+.delete-btn:hover {
+  opacity: 1 !important;
+}
+
+.import-btn {
+  display: block;
+  width: 100%;
+  background: var(--card-light);
+  color: inherit;
+  border: 1px solid var(--gray-border);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.9em;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.import-btn:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .import-btn {
+  background: var(--card-dark);
+  border-color: rgba(255,255,255,0.1);
+}
+
+body.dark .import-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dropdown-footer {
+  padding: 8px 12px;
+  border-top: 1px solid var(--gray-border);
+}
+
+body.dark .dropdown-footer {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.selected-count {
+  font-size: 0.9em;
+  opacity: 0.7;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.btn {
+  background: var(--card-light);
+  color: inherit;
+  border-radius: 8px;
+  border: 1px solid var(--gray-border);
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 200px;
+  transition: background 0.2s ease;
+}
+
+.btn.disabled {
+  background: rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark .btn {
+  background: var(--card-dark, #222);
+  border: 1px solid var(--gray-border, #555);
+  color: var(--text-dark, #ddd);
+}
+
+body.dark .btn:hover {
+  background: var(--accent);
+} 
+
+body.dark .btn.disabled {
+  background: var(--accent);
+}
+
+#quiz-word, #quiz-reading {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+#card {
+  background: var(--card-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+#card.clickable-card {
+  cursor: pointer;
+}
+
+#card.not-clickable {
+  cursor: default;
+}
+
+body.dark #card {
+  background: var(--card-dark);
+}
+
+.kanji {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.furigana {
+  font-size: 0.8em;
+  margin-top: 4px;
+}
+
+#options-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 342px;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.option:hover {
+  background-color: rgba(0,0,0,0.01);
+}
+
+body.dark .option:hover {
+  background-color: rgba(0,0,0,0.01);
+}
+
+.option.correct {
   background-color: var(--green) !important;
   color: #fff !important;
 }
-    .option.wrong {
+
+.option.wrong {
   background-color: var(--red) !important;
   color: #fff !important;
 }
-    #feedback {
-      font-weight: bold;
-    }
-    #back {
+
+#feedback {
+  font-weight: bold;
+}
+
+#back {
   font-size: 0.9rem;
   color: inherit;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.2s ease;
   font-family: 'Rubik', sans-serif;
-  margin-top: 30px; /* move it closer */
+  margin-top: 30px;
 }
 
 #back:hover {
   opacity: 1;
 }
-  
+
 body.dark .option.correct,
 body.dark .option.wrong {
   color: #111 !important;
 }
-
 
 .menu-row {
   display: flex;
@@ -282,8 +651,8 @@ body.dark .option.wrong {
   width: 100%;
   height: 100%;
   transition: filter 0.2s ease;
-  display: block; /* Ensures no padding/margin breaks effect */
-  pointer-events: none; /* Makes sure hover stays on .reset-icon */
+  display: block;
+  pointer-events: none;
   opacity: 0.70;
 }
 
@@ -306,19 +675,118 @@ body.dark .reset-icon img {
   cursor: pointer;
   user-select: none;
 }
+
 .speaker-icon:hover {
   opacity: 1;
 }
+
 body.dark .speaker-icon {
+  filter: invert(1);
+}
+
+/* Kanji Hide Effect - Gaussian Blur */
+.kanji-hidden {
+  position: relative;
+  display: inline-block;
+}
+
+.kanji-text {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+}
+
+.kanji-hidden:hover .kanji-text {
+  filter: blur(0px);
+}
+
+.option-speaker {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.option-speaker:hover {
+  opacity: 1;
+}
+
+/* Reset option hover when hovering over speaker, but NOT if option is correct/wrong */
+.option:has(.option-speaker:hover):not(.correct):not(.wrong) {
+  background-color: var(--card-light) !important;
+}
+
+body.dark .option:has(.option-speaker:hover):not(.correct):not(.wrong) {
+  background-color: var(--card-dark) !important;
+}
+
+body.dark .option-speaker {
   filter: invert(1);
 }
 </style>
 </head>
 <body>
 <button id="toggle-theme"></button>
+<button id="settings-btn" onclick="document.getElementById('settings-modal').style.display = 'flex';">🔧</button>
+
+<!-- Settings Modal -->
+<div id="settings-modal" onclick="if(event.target === this) this.style.display = 'none';">
+  <div id="settings-content">
+    <button id="settings-close" onclick="document.getElementById('settings-modal').style.display = 'none';">×</button>
+    <h2 style="margin-top: 0; margin-bottom: 24px; font-size: 18px;">Settings</h2>
+    
+    <div class="setting-item">
+      <div class="setting-label">Hide Kanji</div>
+      <button class="setting-toggle" id="hide-kanji-toggle" onclick="toggleSetting('hideKanji')"></button>
+    </div>
+    
+    <div class="setting-item">
+      <div class="setting-label">Swap Languages</div>
+      <button class="setting-toggle" id="swap-languages-toggle" onclick="toggleSetting('swapLanguages')"></button>
+    </div>
+    
+    <div class="setting-item">
+      <div class="setting-label">Auto Play Audio</div>
+      <button class="setting-toggle" id="auto-audio-toggle" onclick="toggleSetting('autoAudio')"></button>
+    </div>
+  </div>
+</div>
 
 <div id="menu">
-  <h1>Select Word Set</h1>
+  <h1>Flashcard Quiz</h1>
+  
+  <div id="list-selector">
+    <div class="dropdown-container">
+      <button class="dropdown-btn" onclick="toggleDropdown()">
+        <span id="selected-lists">Select Word Lists</span>
+        <span class="dropdown-arrow">▼</span>
+      </button>
+      
+      <div class="dropdown-content" id="dropdown-content">
+        <div class="dropdown-header">
+          <button class="select-all-btn" onclick="selectAllLists()">Select All</button>
+          <button class="clear-all-btn" onclick="clearAllLists()">Clear All</button>
+        </div>
+        
+        <div class="list-items" id="list-items">
+          <!-- Dynamic list items will be added here -->
+        </div>
+        
+        <div class="dropdown-footer">
+          <label class="import-btn">
+            <input type="file" id="import-file" accept=".json" multiple style="display: none;" onchange="importJsonFiles(event)">
+            <span>Import JSON</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="selected-count" id="selected-count">0 lists selected (0 words)</div>
+  </div>
 
   <div class="menu-row">
     <div class="btn-wrapper">
@@ -357,8 +825,8 @@ body.dark .speaker-icon {
 </div>
 
 <div id="quiz">
-  <div id="card" onclick="playCurrentAudio()" style="position: relative;"><div id="quiz-word" style="font-size: 2em; font-weight: bold;"></div>
-    
+  <div id="card" onclick="playCurrentAudio()" style="position: relative;" class="clickable-card">
+    <div id="quiz-word" style="font-size: 2em; font-weight: bold;"></div>
     <img src="Speaker_Icon.svg" alt="Play Audio" class="speaker-icon" onclick="event.stopPropagation(); playCurrentAudio();" />
     <div id="quiz-reading"></div>
   </div>
@@ -372,6 +840,8 @@ body.dark .speaker-icon {
 
 <script>
 let vocabList = [];
+let allWordLists = {};
+let selectedLists = [];
 let wordStatus = {};
 let currentWordList = [];
 let currentWord = null;
@@ -379,17 +849,381 @@ let shuffledList = [];
 let totalCards = 0;
 let hasAnswered = false;
 
+// Settings
+let settings = {
+  hideKanji: false,
+  swapLanguages: false,
+  autoAudio: false
+};
+
+function saveSettings() {
+  localStorage.setItem("flashcardSettings", JSON.stringify(settings));
+}
+
+function loadSettings() {
+  const saved = localStorage.getItem("flashcardSettings");
+  if (saved) {
+    settings = { ...settings, ...JSON.parse(saved) };
+  }
+  updateSettingsUI();
+}
+
+function updateSettingsUI() {
+  document.getElementById("hide-kanji-toggle").classList.toggle("active", settings.hideKanji);
+  document.getElementById("swap-languages-toggle").classList.toggle("active", settings.swapLanguages);
+  document.getElementById("auto-audio-toggle").classList.toggle("active", settings.autoAudio);
+}
+
+function toggleSetting(settingName) {
+  settings[settingName] = !settings[settingName];
+  saveSettings();
+  updateSettingsUI();
+  
+  // Apply settings immediately if in quiz mode
+  if (document.getElementById("quiz").style.display === "flex" && currentWord) {
+    applyCurrentSettings();
+  }
+}
+
+function openSettings() {
+  document.getElementById("settings-modal").style.display = "flex";
+}
+
+function toggleDropdown() {
+  const dropdown = document.getElementById("dropdown-content");
+  const btn = document.querySelector(".dropdown-btn");
+  
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+    btn.classList.remove("open");
+  } else {
+    dropdown.style.display = "block";
+    btn.classList.add("open");
+  }
+}
+
+function selectAllLists() {
+  const checkboxes = document.querySelectorAll(".list-checkbox");
+  checkboxes.forEach(checkbox => {
+    if (!checkbox.checked) {
+      checkbox.checked = true;
+      toggleListSelection(checkbox.dataset.listName);
+    }
+  });
+}
+
+function clearAllLists() {
+  const checkboxes = document.querySelectorAll(".list-checkbox");
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      checkbox.checked = false;
+      toggleListSelection(checkbox.dataset.listName);
+    }
+  });
+}
+
+function toggleListSelection(listName) {
+  const index = selectedLists.indexOf(listName);
+  if (index === -1) {
+    selectedLists.push(listName);
+  } else {
+    selectedLists.splice(index, 1);
+  }
+  updateVocabList();
+  updateSelectedDisplay();
+  saveWordLists(); // Save when selection changes
+}
+
+function updateSelectedDisplay() {
+  const selectedText = document.getElementById("selected-lists");
+  const countText = document.getElementById("selected-count");
+  
+  if (selectedLists.length === 0) {
+    selectedText.textContent = "Select Word Lists";
+    countText.textContent = "0 lists selected (0 words)";
+  } else if (selectedLists.length === 1) {
+    selectedText.textContent = selectedLists[0];
+    // Use actual vocabList length (after deduplication)
+    const wordCount = vocabList.length;
+    countText.textContent = `1 list selected (${wordCount} words)`;
+  } else {
+    selectedText.textContent = `${selectedLists.length} lists selected`;
+    // Use actual vocabList length (after deduplication)
+    const wordCount = vocabList.length;
+    countText.textContent = `${selectedLists.length} lists selected (${wordCount} words)`;
+  }
+}
+
+function analyzeWordOverlaps() {
+  const overlaps = {};
+  const wordToLists = {}; // Track which lists contain each word
+  
+  // Build map of word -> lists containing it (exact match only)
+  Object.keys(allWordLists).forEach(listName => {
+    allWordLists[listName].forEach(word => {
+      const key = word.japanese; // Exact japanese text match
+      if (!wordToLists[key]) {
+        wordToLists[key] = {
+          word: word,
+          lists: [],
+          meanings: new Set()
+        };
+      }
+      // Only add if this exact word isn't already in this list
+      if (!wordToLists[key].lists.includes(listName)) {
+        wordToLists[key].lists.push(listName);
+        wordToLists[key].meanings.add(word.meaning);
+      }
+    });
+  });
+  
+  // Find overlaps and conflicts
+  Object.keys(wordToLists).forEach(japanese => {
+    const data = wordToLists[japanese];
+    if (data.lists.length > 1) {
+      overlaps[japanese] = {
+        lists: data.lists,
+        meanings: Array.from(data.meanings),
+        hasConflict: data.meanings.size > 1 // Different meanings for same word
+      };
+    }
+  });
+  
+  return {
+    overlaps,
+    wordToLists,
+    stats: {
+      totalUniqueWords: Object.keys(wordToLists).length,
+      duplicatedWords: Object.keys(overlaps).length,
+      conflictingMeanings: Object.values(overlaps).filter(o => o.hasConflict).length
+    }
+  };
+}
+
+function showOverlapAnalysis() {
+  const analysis = analyzeWordOverlaps();
+  
+  console.log("📊 Word List Analysis:");
+  console.log(`Total unique words: ${analysis.stats.totalUniqueWords}`);
+  console.log(`Words appearing in multiple lists: ${analysis.stats.duplicatedWords}`);
+  console.log(`Words with conflicting meanings: ${analysis.stats.conflictingMeanings}`);
+  
+  if (analysis.stats.duplicatedWords > 0) {
+    console.log("\n🔄 Overlapping words:");
+    Object.entries(analysis.overlaps).forEach(([japanese, data]) => {
+      const status = data.hasConflict ? "⚠️ CONFLICT" : "✅ OK";
+      console.log(`${japanese} (${data.lists.join(", ")}) ${status}`);
+      if (data.hasConflict) {
+        console.log(`  Meanings: ${data.meanings.join(" | ")}`);
+      }
+    });
+  }
+  
+  return analysis;
+}
+
+function getEffectiveWordStatus(japanese, analysis = null) {
+  if (!analysis) analysis = analyzeWordOverlaps();
+  
+  // For words that appear in multiple lists, use the "best" status
+  // Priority: GOOD > OK > FAIL > NEW
+  const statusPriority = { GOOD: 4, OK: 3, FAIL: 2, NEW: 1 };
+  const currentStatus = wordStatus[japanese] || "NEW";
+  
+  // If word appears in multiple lists, we already have a unified status
+  return currentStatus;
+}
+
+function updateVocabList() {
+  const analysis = analyzeWordOverlaps();
+  
+  // Combine all selected lists with deduplication
+  const combinedWords = [];
+  const seenWords = new Set();
+  
+  selectedLists.forEach(listName => {
+    if (allWordLists[listName]) {
+      allWordLists[listName].forEach(word => {
+        if (!seenWords.has(word.japanese)) {
+          // For duplicates, prefer the word from the first list (maintain order)
+          combinedWords.push(word);
+          seenWords.add(word.japanese);
+        } else if (analysis.overlaps[word.japanese]?.hasConflict) {
+          // Debug: Let's see what's actually conflicting
+          console.warn(`⚠️ Meaning conflict for "${word.japanese}":`, {
+            currentWord: word,
+            existingInLists: analysis.overlaps[word.japanese].lists,
+            allMeanings: analysis.overlaps[word.japanese].meanings
+          });
+        }
+      });
+    }
+  });
+  
+  vocabList = combinedWords;
+  
+  // Initialize word status for new words
+  vocabList.forEach(v => {
+    if (!wordStatus[v.japanese]) wordStatus[v.japanese] = "NEW";
+  });
+  
+  updateCounts();
+}
+
+function populateListItems() {
+  const container = document.getElementById("list-items");
+  container.innerHTML = "";
+  
+  Object.keys(allWordLists).forEach(listName => {
+    const wordCount = allWordLists[listName].length;
+    const isSelected = selectedLists.includes(listName);
+    
+    const item = document.createElement("div");
+    item.className = "list-item";
+    item.onclick = (e) => {
+      // Don't toggle if clicking on delete button
+      if (e.target.classList.contains('delete-btn')) return;
+      
+      const checkbox = item.querySelector(".list-checkbox");
+      checkbox.checked = !checkbox.checked;
+      toggleListSelection(listName);
+    };
+    
+    item.innerHTML = `
+      <input type="checkbox" class="list-checkbox" data-list-name="${listName}" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); toggleListSelection('${listName}')">
+      <div class="list-info">
+        <div class="list-name">${listName}</div>
+        <div class="list-count">${wordCount} words</div>
+      </div>
+      <button class="delete-btn" onclick="event.stopPropagation(); deleteList('${listName}')">×</button>
+    `;
+    
+    container.appendChild(item);
+  });
+}
+
+function deleteList(listName) {
+  if (confirm(`Are you sure you want to delete "${listName}"?`)) {
+    // Remove from allWordLists
+    delete allWordLists[listName];
+    
+    // Remove from selectedLists if it was selected
+    const index = selectedLists.indexOf(listName);
+    if (index !== -1) {
+      selectedLists.splice(index, 1);
+      updateSelectedDisplay();
+      updateVocabList();
+    }
+    
+    // Save the updated lists
+    saveWordLists();
+    
+    // Refresh the dropdown
+    populateListItems();
+  }
+}
+
+async function discoverJsonFiles() {
+  // Try to discover JSON files on the server
+  const commonNames = ['Beginner Vocab'];
+  
+  for (const name of commonNames) {
+    try {
+      const response = await fetch(`${name}.json`);
+      if (response.ok) {
+        const data = await response.json();
+        if (Array.isArray(data) && data.length > 0) {
+          allWordLists[name] = data;
+          saveWordLists(); // Save discovered lists
+        }
+      }
+    } catch (error) {
+      // File doesn't exist, continue
+    }
+  }
+}
+
+function importJsonFiles(event) {
+  const files = event.target.files;
+  
+  Array.from(files).forEach(file => {
+    if (file.type === 'application/json') {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (Array.isArray(data) && data.length > 0) {
+            // Use filename without extension as list name
+            const listName = file.name.replace('.json', '');
+            allWordLists[listName] = data;
+            
+            // Auto-select the imported list
+            if (!selectedLists.includes(listName)) {
+              selectedLists.push(listName);
+            }
+            
+            // Update vocab list first, then display
+            updateVocabList();
+            updateSelectedDisplay();
+            
+            // Save the updated lists
+            saveWordLists();
+            
+            // Refresh the dropdown with proper checkbox states
+            populateListItems();
+            
+            console.log(`Imported ${listName} with ${data.length} words`);
+          } else {
+            alert(`Invalid JSON format in ${file.name}. Expected an array of word objects.`);
+          }
+        } catch (error) {
+          alert(`Error parsing ${file.name}: ${error.message}`);
+        }
+      };
+      reader.readAsText(file);
+    }
+  });
+  
+  // Clear the input
+  event.target.value = '';
+}
+
 function saveStatus() {
   localStorage.setItem("wordStatus", JSON.stringify(wordStatus));
 }
+
+function saveWordLists() {
+  localStorage.setItem("allWordLists", JSON.stringify(allWordLists));
+  localStorage.setItem("selectedLists", JSON.stringify(selectedLists));
+}
+
+function loadWordLists() {
+  const savedWordLists = localStorage.getItem("allWordLists");
+  const savedSelectedLists = localStorage.getItem("selectedLists");
+  
+  if (savedWordLists) {
+    allWordLists = JSON.parse(savedWordLists);
+  }
+  
+  if (savedSelectedLists) {
+    selectedLists = JSON.parse(savedSelectedLists);
+  } else {
+    selectedLists = [];
+  }
+}
+
 function loadStatus() {
   wordStatus = JSON.parse(localStorage.getItem("wordStatus") || "{}");
 }
+
 function updateCounts() {
   const counts = { NEW: 0, FAIL: 0, OK: 0, GOOD: 0 };
-  for (const status of Object.values(wordStatus)) {
+  
+  // Count statuses only for words in the currently selected lists
+  vocabList.forEach(word => {
+    const status = wordStatus[word.japanese] || "NEW";
     counts[status]++;
-  }
+  });
 
   document.getElementById("count-new").textContent = counts.NEW;
   document.getElementById("count-fail").textContent = counts.FAIL;
@@ -406,11 +1240,13 @@ function updateCounts() {
   if (okBtn) okBtn.classList.toggle("disabled", counts.OK === 0);
   if (goodBtn) goodBtn.classList.toggle("disabled", counts.GOOD === 0);
 }
+
 function showMenu() {
   updateCounts();
   document.getElementById("menu").style.display = "flex";
   document.getElementById("quiz").style.display = "none";
 }
+
 function startQuiz(mode) {
   currentWordList = vocabList.filter(v => wordStatus[v.japanese] === mode);
   shuffledList = [...currentWordList].sort(() => Math.random() - 0.5);
@@ -423,69 +1259,222 @@ function startQuiz(mode) {
   document.getElementById("quiz").style.display = "flex";
   nextCard();
 }
+
 function nextCard() {
+  // Remove any existing advance click handlers first
+  if (window.currentAdvanceHandler) {
+    document.removeEventListener("click", window.currentAdvanceHandler);
+    window.currentAdvanceHandler = null;
+  }
+  
   if (shuffledList.length === 0) {
     document.getElementById("progress").textContent = totalCards + "/" + totalCards;
+    // Quiz is complete, return to menu on next click
+    function handleCompleteClick(e) {
+      if (!e.target.closest("#toggle-theme") && !e.target.closest("#settings-btn")) {
+        showMenu();
+        document.removeEventListener("click", handleCompleteClick);
+      }
+    }
+    document.addEventListener("click", handleCompleteClick);
     return;
   }
+  
   hasAnswered = false;
-  const optionsContainer = document.getElementById("options");
-  optionsContainer.innerHTML = "";
   currentWord = shuffledList.pop();
   const shown = totalCards - shuffledList.length;
   document.getElementById("progress").textContent = shown + "/" + totalCards;
-  document.getElementById("quiz-word").textContent = currentWord.japanese;
-  document.getElementById("quiz-reading").textContent = currentWord.furigana;
-
+  
+  console.log("Starting nextCard for:", currentWord.japanese);
+  
+  // Clear options first
+  const optionsContainer = document.getElementById("options");
+  optionsContainer.innerHTML = "";
+  
+  // Generate choices for this card
   const wrongChoices = vocabList.filter(v => v.meaning !== currentWord.meaning);
-  const allChoices = [...wrongChoices.sort(() => 0.5 - Math.random()).slice(0, 8), currentWord]
-                      .sort(() => 0.5 - Math.random());
-
-  allChoices.forEach(choice => {
+  const shuffledWrong = wrongChoices.sort(() => 0.5 - Math.random()).slice(0, 8);
+  const allChoices = [...shuffledWrong, currentWord].sort(() => 0.5 - Math.random());
+  
+  console.log("Generated", allChoices.length, "choices");
+  
+  // Create options immediately
+  allChoices.forEach((choice, index) => {
     const div = document.createElement("div");
     div.className = "option";
-    div.textContent = choice.meaning;
+    div.textContent = choice.meaning; // Start with English (default mode)
+    div.style.fontFamily = "'Rubik', sans-serif";
+    
+    // Store the choice data on the element for later reference
+    div.choiceData = choice;
+    
+    // Add click handler
     div.onclick = () => {
       if (hasAnswered) return;
       hasAnswered = true;
-      if (choice.meaning === currentWord.meaning) {
+      
+      // Determine correct answer based on current mode
+      const correctAnswer = settings.swapLanguages ? currentWord.japanese : currentWord.meaning;
+      
+      if (div.textContent === correctAnswer) {
         div.classList.add("correct");
         const audio = new Audio('correct.mp3');
         audio.volume = 0.2;
         audio.play();
-        wordStatus[currentWord.japanese] =
-          wordStatus[currentWord.japanese] === "FAIL" ? "OK" : "GOOD";
+        wordStatus[currentWord.japanese] = wordStatus[currentWord.japanese] === "FAIL" ? "OK" : "GOOD";
       } else {
         div.classList.add("wrong");
         wordStatus[currentWord.japanese] = "FAIL";
+        // Show correct answer
         [...optionsContainer.children].forEach(opt => {
-          if (opt.textContent === currentWord.meaning) {
+          if (opt.textContent === correctAnswer) {
             opt.classList.add("correct");
           }
         });
       }
       saveStatus();
+      
       setTimeout(() => {
-        function handleAdvanceClick(e) {
-          if (!e.target.closest("#card") && !e.target.closest("#toggle-theme")) {
-          nextCard();
-          document.removeEventListener("click", handleAdvanceClick);
-       }
-      }
-       document.addEventListener("click", handleAdvanceClick);
-    }, 100);
+        // Check if this was the last card
+        if (shuffledList.length === 0) {
+          // Quiz complete - go directly to menu on next click
+          function handleCompleteClick(e) {
+            if (!e.target.closest("#toggle-theme") && !e.target.closest("#settings-btn")) {
+              showMenu();
+              document.removeEventListener("click", handleCompleteClick);
+            }
+          }
+          document.addEventListener("click", handleCompleteClick);
+        } else {
+          // More cards remain - set up advance to next card
+          function handleAdvanceClick(e) {
+            if (!e.target.closest("#card") && !e.target.closest("#toggle-theme") && !e.target.closest("#settings-btn")) {
+              nextCard();
+              document.removeEventListener("click", handleAdvanceClick);
+              window.currentAdvanceHandler = null;
+            }
+          }
+          
+          // Store reference to current handler so we can remove it later
+          window.currentAdvanceHandler = handleAdvanceClick;
+          document.addEventListener("click", handleAdvanceClick);
+        }
+      }, 100);
     };
+    
     optionsContainer.appendChild(div);
+    console.log("Added option", index, ":", choice.meaning);
   });
+  
+  console.log("Options container now has", optionsContainer.children.length, "children");
+  
+  // Now apply settings to modify display if needed
+  applyCurrentSettings();
+  
+  // Auto play audio if enabled
+  if (settings.autoAudio && !settings.swapLanguages) {
+    setTimeout(() => playCurrentAudio(), 200);
+  }
 }
-function waitClickOnce() {
-  nextCard();
+
+function applyCurrentSettings() {
+  if (!currentWord) return;
+  
+  const wordElement = document.getElementById("quiz-word");
+  const readingElement = document.getElementById("quiz-reading");
+  const speakerIcon = document.querySelector(".speaker-icon");
+  const card = document.getElementById("card");
+  const optionsContainer = document.getElementById("options");
+  
+  console.log("Applying settings, swapLanguages:", settings.swapLanguages);
+  
+  if (settings.swapLanguages) {
+    // English/Japanese mode: Show English on card, Japanese in options
+    wordElement.innerHTML = currentWord.meaning;
+    readingElement.textContent = "";
+    wordElement.style.fontFamily = "'Rubik', sans-serif";
+    speakerIcon.style.display = "none";
+    card.className = "not-clickable";
+    
+    // Convert existing options to Japanese with speakers
+    [...optionsContainer.children].forEach(option => {
+      if (option.choiceData) {
+        option.textContent = option.choiceData.japanese;
+        option.style.fontFamily = "'Noto Sans JP', sans-serif";
+        option.style.position = 'relative';
+        
+        // Add speaker if not already there
+        if (!option.querySelector('.option-speaker')) {
+          const speaker = document.createElement('img');
+          speaker.src = 'Speaker_Icon.svg';
+          speaker.className = 'option-speaker';
+          speaker.onclick = (e) => {
+            e.stopPropagation();
+            console.log("Speaker clicked for:", option.choiceData.japanese);
+            
+            fetch("https://flashcard-api-cw40.onrender.com/speak", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text: option.choiceData.japanese })
+            })
+            .then(r => {
+              if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
+              return r.blob();
+            })
+            .then(blob => {
+              const url = URL.createObjectURL(blob);
+              const audio = new Audio(url);
+              audio.play().catch(e => console.error("Audio play failed:", e));
+            })
+            .catch(error => {
+              console.error("Audio fetch failed:", error);
+            });
+          };
+          option.appendChild(speaker);
+        }
+      }
+    });
+    
+  } else {
+    // Japanese/English mode: Show Japanese on card, English in options
+    speakerIcon.style.display = "block";
+    card.className = "clickable-card";
+    wordElement.style.fontFamily = "'Noto Sans JP', sans-serif";
+    readingElement.textContent = currentWord.furigana;
+    
+    if (settings.hideKanji) {
+      wordElement.innerHTML = `
+        <span class="kanji-hidden">
+          <span class="kanji-text">${currentWord.japanese}</span>
+        </span>
+      `;
+    } else {
+      wordElement.textContent = currentWord.japanese;
+    }
+    
+    // Convert existing options back to English without speakers
+    [...optionsContainer.children].forEach(option => {
+      // Remove speaker if it exists
+      const speaker = option.querySelector('.option-speaker');
+      if (speaker) speaker.remove();
+      
+      if (option.choiceData) {
+        option.textContent = option.choiceData.meaning;
+        option.style.fontFamily = "'Rubik', sans-serif";
+        option.style.position = '';
+      }
+    });
+  }
+  
+  console.log("Settings applied, options count:", optionsContainer.children.length);
 }
+
 function returnToMenu() {
   showMenu();
 }
+
 function playCurrentAudio() {
-  if (!currentWord) return;
+  if (!currentWord || settings.swapLanguages) return; // Don't play audio in English/Japanese mode
   fetch("https://flashcard-api-cw40.onrender.com/speak", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -497,6 +1486,7 @@ function playCurrentAudio() {
     new Audio(url).play();
   });
 }
+
 document.getElementById("toggle-theme").onclick = () => {
   document.body.classList.toggle("dark");
   localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
@@ -507,37 +1497,76 @@ if (localStorage.getItem("theme") === "dark") {
 }
 
 loadStatus();
+loadSettings();
+loadWordLists(); // Load saved word lists first
 
-fetch("vocab.json")
-  .then(res => res.json())
-  .then(data => {
-    vocabList = data;
-    vocabList.forEach(v => {
-      if (!wordStatus[v.japanese]) wordStatus[v.japanese] = "NEW";
-    });
+// Load initial Beginner Vocab.json and discover other files
+discoverJsonFiles().then(() => {
+  // Only try to load Beginner Vocab.json if we don't already have it saved
+  if (!allWordLists['Beginner Vocab']) {
+    fetch("Beginner Vocab.json")
+      .then(res => res.json())
+      .then(data => {
+        allWordLists['Beginner Vocab'] = data;
+        
+        // Auto-select Beginner Vocab.json if no lists are selected
+        if (selectedLists.length === 0) {
+          selectedLists = ['Beginner Vocab'];
+        }
+        
+        updateVocabList();
+        updateSelectedDisplay();
+        populateListItems();
+        saveWordLists(); // Save the newly loaded list
+        
+        showMenu();
+      })
+      .catch(err => {
+        console.log("No Beginner Vocab.json found, showing existing lists");
+        updateVocabList();
+        updateSelectedDisplay();
+        populateListItems();
+        showMenu();
+      });
+  } else {
+    // We already have saved lists, just update the UI
+    updateVocabList();
+    updateSelectedDisplay();
+    populateListItems();
     showMenu();
-  })
-  .catch(err => {
-    alert("Failed to load vocab.json");
-    console.error(err);
-  });
+  }
+});
 
 function resetList(listName, event) {
   event.stopPropagation();
 
-  const list = vocabList.filter(v => wordStatus[v.japanese] === listName);
-  if (!list.length) return;
-
-  for (const word of list) {
-    wordStatus[word.japanese] = "NEW";
+  // Find all words in the current vocab list with the specified status
+  const wordsToReset = vocabList.filter(v => wordStatus[v.japanese] === listName);
+  
+  if (!wordsToReset.length) {
+    console.log(`No words found with status: ${listName}`);
+    return;
   }
 
-  saveStatus();
-  updateCounts();
-}
+  if (confirm(`Reset ${wordsToReset.length} words from ${listName} back to NEW?`)) {
+    wordsToReset.forEach(word => {
+      wordStatus[word.japanese] = "NEW";
+    });
 
-</script></script>
+    saveStatus();
+    updateCounts();
+  }
+}
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const dropdown = document.getElementById('dropdown-content');
+  const btn = document.querySelector('.dropdown-btn');
+  
+  if (!event.target.closest('.dropdown-container')) {
+    dropdown.style.display = 'none';
+    btn.classList.remove('open');
+  }
+});
+</script>
 </body>
 </html>
-
-
